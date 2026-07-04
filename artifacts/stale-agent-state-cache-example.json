@@ -1,0 +1,12 @@
+{
+  "artifact_type": "stale_agent_state_cache_example",
+  "version": "1.0",
+  "cache_key": "planner-output-main-previous-run",
+  "source_run_id": "run_2026_07_state_lab_previous",
+  "source_commit_sha": "102f56af42010e409548ce0c2a2228c535785db9",
+  "current_run_id": "run_2026_07_state_lab_042",
+  "current_commit_sha": "183dfa2490b144ad2d13373497a75c51ab604d53",
+  "stale": true,
+  "risk": "A downstream agent might reason, plan, or build against stale planner context from a previous run if fallback cache behavior is not blocked.",
+  "safe_operator_response": "Block fallback to stale cached state unless a human explicitly approves and labels the artifact as previous-run context."
+}

@@ -1,0 +1,111 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "planner-state-manifest.schema.json",
+  "title": "Planner State Manifest Artifact",
+  "description": "Educational schema for validating deterministic planner-to-builder state handoffs.",
+  "type": "object",
+  "required": [
+    "artifact_type",
+    "version",
+    "producing_agent",
+    "consuming_agent",
+    "run_id",
+    "run_attempt",
+    "commit_sha",
+    "source_branch",
+    "expected_artifact_name",
+    "normalized_artifact_name",
+    "output_key",
+    "produced_at",
+    "state_status",
+    "schema_required",
+    "downstream_blocked_if_missing",
+    "context_budget",
+    "safe_next_action"
+  ],
+  "properties": {
+    "artifact_type": {
+      "const": "planner_state_manifest"
+    },
+    "version": {
+      "type": "string"
+    },
+    "producing_agent": {
+      "type": "string"
+    },
+    "consuming_agent": {
+      "type": "string"
+    },
+    "run_id": {
+      "type": "string"
+    },
+    "run_attempt": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "commit_sha": {
+      "type": "string",
+      "minLength": 7
+    },
+    "source_branch": {
+      "type": "string"
+    },
+    "expected_artifact_name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "normalized_artifact_name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "output_key": {
+      "type": "string",
+      "minLength": 1
+    },
+    "produced_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "state_status": {
+      "enum": [
+        "pending",
+        "valid",
+        "invalid",
+        "blocked"
+      ]
+    },
+    "schema_required": {
+      "type": "string"
+    },
+    "downstream_blocked_if_missing": {
+      "type": "boolean"
+    },
+    "context_budget": {
+      "type": "object",
+      "required": [
+        "estimated_tokens",
+        "max_allowed_tokens",
+        "oversized"
+      ],
+      "properties": {
+        "estimated_tokens": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "max_allowed_tokens": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "oversized": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": true
+    },
+    "safe_next_action": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "additionalProperties": true
+}

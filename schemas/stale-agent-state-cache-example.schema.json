@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "stale-agent-state-cache-example.schema.json",
+  "title": "Stale Agent State Cache Example Artifact",
+  "description": "Educational schema for identifying stale cached state risk in agent handoffs.",
+  "type": "object",
+  "required": [
+    "artifact_type",
+    "version",
+    "cache_key",
+    "source_run_id",
+    "source_commit_sha",
+    "current_run_id",
+    "current_commit_sha",
+    "stale",
+    "risk",
+    "safe_operator_response"
+  ],
+  "properties": {
+    "artifact_type": {
+      "const": "stale_agent_state_cache_example"
+    },
+    "version": {
+      "type": "string"
+    },
+    "cache_key": {
+      "type": "string"
+    },
+    "source_run_id": {
+      "type": "string"
+    },
+    "source_commit_sha": {
+      "type": "string",
+      "minLength": 7
+    },
+    "current_run_id": {
+      "type": "string"
+    },
+    "current_commit_sha": {
+      "type": "string",
+      "minLength": 7
+    },
+    "stale": {
+      "type": "boolean"
+    },
+    "risk": {
+      "type": "string",
+      "minLength": 1
+    },
+    "safe_operator_response": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "additionalProperties": true
+}

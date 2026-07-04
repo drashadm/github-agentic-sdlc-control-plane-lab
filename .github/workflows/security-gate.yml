@@ -1,3 +1,8 @@
+# Educational governance pattern:
+# This workflow is intentionally simplified for artifact-reading practice.
+# Review before reuse in production. Adapt permissions and gates to the target repository.
+# It demonstrates governance concepts, not a production-ready integration.
+
 name: Security Gate
 
 on:
@@ -25,14 +30,35 @@ jobs:
       - name: Inspect high-risk patterns
         id: risk
         run: |
+          active_risk=0
+
+          # Active agent profiles are operational instruction surfaces. Broad tool access here
+          # should fail because a downstream agent may act with that authority.
           if grep -R 'tools: \["\*"\]' .github/agents 2>/dev/null; then
+            active_risk=1
+          fi
+
+          # Wildcard MCP access in active agent profiles is blocking. Educational examples
+          # under mcp/ are allowed to remain as inert artifact-reading examples.
+          if grep -R 'server/\*' .github/agents 2>/dev/null; then
+            active_risk=1
+          fi
+
+          # Active workflow permission expansion is blocking because it changes the control
+          # plane. The lab's risky MCP examples should warn, not fail this gate.
+          if grep -R -E '^[[:space:]]*permissions:[[:space:]]*write-all|^[[:space:]]*contents:[[:space:]]*write' .github/workflows 2>/dev/null; then
+            active_risk=1
+          fi
+
+          if grep -R -E 'server/\*|governance-api/\*|local-shell/\*' mcp 2>/dev/null; then
+            echo "Warning: intentionally risky educational MCP example detected under mcp/."
+          fi
+
+          if [ "$active_risk" -eq 1 ]; then
             echo "risk_level=high" >> "$GITHUB_OUTPUT"
             exit 1
           fi
-          if grep -R 'server/\*' .github/agents mcp 2>/dev/null; then
-            echo "risk_level=high" >> "$GITHUB_OUTPUT"
-            exit 1
-          fi
+
           echo "risk_level=reviewed" >> "$GITHUB_OUTPUT"
 
       - uses: actions/upload-artifact@v4

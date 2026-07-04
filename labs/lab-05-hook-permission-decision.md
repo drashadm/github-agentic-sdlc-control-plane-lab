@@ -53,6 +53,10 @@ A safe operator starts with `event` and `toolName`, then checks the policy block
 
 Block the action, preserve the hook evidence, and require explicit human approval before any destructive operation is reconsidered.
 
+## Agentic Nuance
+
+Hooks are control points only if they are enforced and audited. If a hook warning is treated as advisory, or if deny/ask behavior differs by runtime, an agent can continue through a fail-open path. The hook decision itself is an artifact that must be preserved as evidence.
+
 ## Portfolio Signal
 
 This lab demonstrates how to read hook artifacts as enforcement records and how to explain fail-closed behavior in agentic SDLC governance.

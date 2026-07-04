@@ -57,16 +57,31 @@ Focus:
 * Retry and cost controls
 * Advanced handoff failure lab
 
-## v0.4 - Workflow Validation and Dry-Run Checks
+## v0.4 - Workflow Validation and Lab Nuance
 
-Status: Planned
+Status: Complete in branch
 
 Focus:
 
-* Workflow syntax review
-* Artifact handoff validation
-* Educational workflow warnings
-* Clear separation between examples and production guidance
+* workflow validation guide
+* workflow dry-run checklist
+* workflow education warnings
+* workflow validation report artifact and schema
+* security gate distinction between educational risk examples and active config risk
+* Agentic Nuance sections across all labs
+
+## v0.4.1 - Lab 01 Agent Profile Nuance
+
+Status: Complete in branch
+
+Focus:
+
+* deeper Lab 01 agent profile threat model
+* prompt-and-capability control surfaces
+* executor vs reviewer authority boundaries
+* deterministic guardrails for high-risk tool use
+* educational agent runner workflow
+* agent profile review artifact and schema
 
 ## v0.5 - More Realistic Logs and Failure Scenarios
 

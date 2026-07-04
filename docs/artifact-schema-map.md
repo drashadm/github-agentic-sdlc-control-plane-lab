@@ -15,3 +15,5 @@ Schema validation does not prove an agent was correct. It proves the artifact is
 | `artifacts/consolidated-operator-report.json` | `schemas/consolidated-operator-report.schema.json` | Combines consumed artifacts, final decision, unresolved risks, and the next safe action. |
 | `artifacts/agent-handoff-valid-v2.json` | `schemas/agent-handoff-v2.schema.json` | Demonstrates a valid advanced agent handoff with provenance, output files, risk flags, context budget, and validation status. |
 | `artifacts/planner-context-raw-malformed.json` | `schemas/agent-handoff-v2.schema.json` | Intentionally malformed artifact for teaching schema drift and silent-success risk; it should parse as JSON but fail the expected handoff schema. |
+| `artifacts/workflow-validation-report.json` | `schemas/workflow-validation-report.schema.json` | Preserves workflow review evidence before downstream agent execution. |
+| `artifacts/agent-profile-review-report.json` | `schemas/agent-profile-review-report.schema.json` | Preserves evidence from reviewing agent profile and control-plane file changes. |

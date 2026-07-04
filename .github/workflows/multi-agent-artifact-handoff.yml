@@ -1,3 +1,8 @@
+# Educational governance pattern:
+# This workflow is intentionally simplified for artifact-reading practice.
+# Review before reuse in production. Adapt permissions and gates to the target repository.
+# It demonstrates governance concepts, not a production-ready integration.
+
 name: Multi-Agent Artifact Handoff
 
 on:

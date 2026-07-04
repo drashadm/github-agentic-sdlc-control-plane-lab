@@ -60,6 +60,10 @@ The artifact must be validated against the expected schema before downstream inv
 
 Block downstream execution. Mark the artifact invalid. Regenerate the planner handoff using the required schema. Preserve the malformed artifact as evidence. Do not let the Builder or Consolidator guess missing context.
 
+## Agentic Nuance
+
+Valid JSON is not a valid handoff. The deeper risk is a chain reaction: schema drift creates silent success, silent success hides missing context, context overload or state poisoning makes the downstream agent guess, and retry loops can spend time and money without surfacing the root cause.
+
 ## Portfolio Signal
 
 This lab demonstrates production-grade thinking about agentic handoffs, schema drift, context-window governance, and silent failure prevention.

@@ -53,6 +53,10 @@ A safe operator treats internal notes in published artifacts as a review hygiene
 
 Block publish or merge, remove editorial notes, run final-render review, preserve evidence of the issue, and add a checklist item to prevent recurrence.
 
+## Agentic Nuance
+
+Agentic workflows often move text across draft, review, and final publication states. If those states are not separated, internal comments can leak into public artifacts. The issue is not only polish; it shows that the final-render gate did not distinguish reviewer context from user-facing output.
+
 ## Portfolio Signal
 
 This lab demonstrates publication readiness judgment: catching non-code artifact quality failures that can erode trust in an agent-assisted SDLC.

@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "agent-profile-review-report.schema.json",
+  "title": "Agent Profile Review Report Artifact",
+  "description": "Educational schema for preserving review evidence from agent profile and control-plane file changes.",
+  "type": "object",
+  "required": [
+    "artifact_type",
+    "version",
+    "profiles_reviewed",
+    "control_plane_files_checked",
+    "warnings",
+    "blocking_findings",
+    "safe_next_action"
+  ],
+  "properties": {
+    "artifact_type": {
+      "const": "agent_profile_review_report"
+    },
+    "version": {
+      "type": "string"
+    },
+    "profiles_reviewed": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "control_plane_files_checked": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "warnings": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "blocking_findings": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "safe_next_action": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "additionalProperties": true
+}

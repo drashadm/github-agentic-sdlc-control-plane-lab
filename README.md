@@ -55,7 +55,7 @@ Humans approve high risk action.
 ```text
 .github/
   agents/          Custom agent profiles with scoped tool configurations
-  workflows/       GitHub Actions governance patterns
+  workflows/       GitHub Actions governance patterns, including an inert educational agent-runner review workflow
   hooks/           Hook and permission-decision examples
   instructions/    Repository-level agent instructions
   prompts/         Reusable prompts for planning, review, and audit
@@ -78,10 +78,11 @@ org-governance/    Organization-level custom agent governance examples
 3. Read `docs/gh-600-domain-map.md` to understand the six major capability areas.
 4. Review `docs/artifact-schema-map.md`, `docs/risk-to-github-mitigation-map.md`, and `docs/agentic-threat-model-map.md` for governance maps.
 5. Read `docs/advanced-agentic-failure-modes.md`, `docs/context-window-gating.md`, and `docs/cost-and-retry-control.md` for deeper agentic failure patterns.
-6. Inspect the agent profiles under `.github/agents/` and note how tool access is scoped.
-7. Review MCP server examples under `mcp/`.
-8. Review workflow governance patterns under `.github/workflows/`.
-9. Complete the labs under `labs/` by reading the artifacts and explaining what is safe, risky, broken, or missing.
+6. Use `docs/workflow-validation-guide.md` and `docs/workflow-dry-run-checklist.md` to review workflow gates before trusting downstream agent execution.
+7. Inspect the agent profiles under `.github/agents/` and note how tool access is scoped.
+8. Review MCP server examples under `mcp/`.
+9. Review workflow governance patterns under `.github/workflows/`.
+10. Complete the labs under `labs/` by reading the artifacts and explaining what is safe, risky, broken, or missing.
 
 Use `labs/README.md` for the recommended lab order, difficulty levels, and answer-key guidance.
 
@@ -126,6 +127,8 @@ Agents reason their way toward actions. Control points enforce boundaries regard
 | Lab 09 | Diagnose schema validation failure       |
 | Lab 10 | Trace a GitHub Actions artifact handoff  |
 | Lab 11 | Advanced agent handoff failure           |
+
+Each lab includes an Agentic Nuance section that connects the surface artifact issue to a deeper production agent failure mode.
 
 ---
 

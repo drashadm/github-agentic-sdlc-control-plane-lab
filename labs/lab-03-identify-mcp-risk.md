@@ -55,6 +55,10 @@ A safe operator treats MCP access as capability expansion. Wildcards can grant a
 
 Narrow permissions to explicit tool names, document the trust boundary, and escalate broad MCP expansion for security review.
 
+## Agentic Nuance
+
+MCP expands agency beyond repository reading and editing. Wildcard access can turn a narrow reviewer or planner into a tool-using actor with unreviewed reach. The deeper failure is not only that a tool exists, but that the server trust boundary and future tool surface become invisible to normal code review.
+
 ## Portfolio Signal
 
 This lab demonstrates practical MCP governance: reading tool boundaries, identifying overbroad access, and translating risk into least-privilege controls.

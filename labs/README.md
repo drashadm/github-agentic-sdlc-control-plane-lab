@@ -31,3 +31,16 @@ Advanced labs focus on agent-specific risks that may not appear in normal CI/CD 
 ## How to Use the Answer Keys
 
 Read the artifact first, write your answer, then compare against the answer key. If your answer differs, identify whether the difference comes from a missed field, stale assumption, or a reasonable alternate operator judgment.
+
+## Agentic Nuance Checklist
+
+* Did the agent receive the correct artifact?
+* Did the artifact match the expected schema?
+* Was the artifact current for this branch and run?
+* Could the downstream agent guess missing context instead of failing?
+* Was memory validated against current repository state?
+* Was tool access scoped to the role?
+* Was MCP access explicit and reviewed?
+* Did the workflow preserve evidence?
+* Did the final report include unresolved risks?
+* Did a human approval gate exist for high-risk action?

@@ -56,6 +56,10 @@ Start with `needs` to identify dependency order. Follow the job output back to t
 
 Rerun the workflow only after matching job outputs and artifact names. Keep downstream gating in place and block publication when required evidence is missing.
 
+## Agentic Nuance
+
+Workflow success is not the same as agentic success. A job can pass while the downstream agent uses the wrong artifact, an old artifact, or an artifact that caused zero files to be processed. The gate should verify meaningful handoff content, not only job completion.
+
 ## Portfolio Signal
 
 This lab demonstrates operational GitHub Actions literacy for agentic systems: tracing evidence handoffs across jobs without weakening governance controls.

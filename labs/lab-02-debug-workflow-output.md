@@ -53,6 +53,10 @@ Start with the `planner` job and find its `outputs` block. Follow that output to
 
 Block or rerun the workflow after verifying the output key and artifact upload/download names. Do not approve the downstream result until the handoff is traceable.
 
+## Agentic Nuance
+
+A missing workflow output is not just a CI wiring bug. In an agentic handoff, the downstream agent may guess what the planner meant, reuse stale context, or summarize an empty handoff as if it were complete. The control should block silent continuation, not merely make the workflow logs cleaner.
+
 ## Portfolio Signal
 
 This lab shows the ability to debug GitHub Actions as an evidence pipeline, where outputs, dependencies, and artifacts form reviewable agent handoffs.

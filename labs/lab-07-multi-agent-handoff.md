@@ -56,6 +56,10 @@ Start with the consolidated operator report and compare `artifacts_consumed` aga
 
 Block final approval if any required artifact is missing, stale, contradicted, or omitted from the consolidated report. Regenerate the report from current artifacts.
 
+## Agentic Nuance
+
+More agents create more handoff contracts and more chances for contradiction. A consolidator can accidentally hide disagreement, drop security findings, or turn conditional approval into a clean-looking final decision. The final report is evidence only if it preserves upstream conflict.
+
 ## Portfolio Signal
 
 This lab demonstrates cross-artifact review, a core skill for governing multi-agent delivery systems where no single artifact should be trusted in isolation.

@@ -1,0 +1,28 @@
+{
+  "artifact_type": "workflow_validation_report",
+  "version": "1.0",
+  "workflows_reviewed": [
+    {
+      "path": ".github/workflows/agent-plan-review.yml",
+      "purpose": "Validate planner artifact presence before review."
+    },
+    {
+      "path": ".github/workflows/multi-agent-artifact-handoff.yml",
+      "purpose": "Demonstrate agent artifact handoffs through job outputs and uploaded artifacts."
+    },
+    {
+      "path": ".github/workflows/security-gate.yml",
+      "purpose": "Distinguish active configuration risk from educational risky examples."
+    },
+    {
+      "path": ".github/workflows/consolidated-operator-report.yml",
+      "purpose": "Gate final report publication on required evidence artifacts."
+    }
+  ],
+  "warnings": [
+    "Workflows are educational governance patterns and require production review before reuse.",
+    "Schema validation should be added before downstream agent execution in production."
+  ],
+  "blocking_findings": [],
+  "safe_next_action": "Review workflow gates with a human operator before enabling production use."
+}

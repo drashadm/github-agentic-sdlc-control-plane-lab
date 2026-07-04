@@ -55,6 +55,10 @@ Start with the schema required fields and compare them to the artifact. If a req
 
 Block downstream review on schema failure. If validation passes, continue evidence review because schema validation proves artifact shape, not truth.
 
+## Agentic Nuance
+
+Schema validation proves artifact shape, not truth. A complete-looking artifact can still be misleading, stale, or unsupported by source evidence. Agentic systems need both contract checks and human/evidence review because downstream agents may over-trust a valid shape.
+
 ## Portfolio Signal
 
 This lab demonstrates schema-aware governance: using contracts to catch incomplete handoffs while preserving human review for correctness and risk judgment.

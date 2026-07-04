@@ -54,6 +54,10 @@ Start by identifying whether the log says the session is new or resumed. Then tr
 
 Request clarification or regenerate artifacts if the resumed context is stale. Accept the session only after current branch state, plan artifact, and memory references are verified.
 
+## Agentic Nuance
+
+Resumed sessions can carry stale state across branch, policy, or artifact changes. The agent may appear efficient because it remembers prior work, but that memory can anchor it to an old plan. Safe continuation requires proving that remembered context still matches the current repository state.
+
 ## Portfolio Signal
 
 This lab demonstrates trace-based reasoning over agent sessions and shows that continuity is useful only when validated against current repository evidence.

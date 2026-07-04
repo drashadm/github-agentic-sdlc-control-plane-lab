@@ -54,6 +54,10 @@ Compare the remembered fact with the current agent profile. The current `.agent.
 
 Block execution through the builder, invalidate the stale memory, regenerate repository facts, and route approved execution through the executor profile.
 
+## Agentic Nuance
+
+Memory is useful but not authoritative. A stale memory fact can override current repository evidence if the agent treats it as operational truth. The deeper failure is a confident action taken from old state after the branch, role boundary, or policy changed.
+
 ## Portfolio Signal
 
 This lab demonstrates durable-state governance: validating memory against source-controlled artifacts before allowing an agent to act.

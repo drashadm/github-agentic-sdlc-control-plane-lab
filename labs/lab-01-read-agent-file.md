@@ -53,6 +53,10 @@ A safe operator starts with the front matter because tool access is a governance
 
 Escalate for explicit human approval before use. Allow executor activity only for the approved action, then require an auditable action summary and rollback notes.
 
+## Agentic Nuance
+
+Agent files are not just documentation. They can act as operational instruction surfaces for autonomous or semi-autonomous behavior. A small profile change can create instruction tampering, persona hijack, or overbroad role authority if reviewers treat the file as harmless prose instead of executable governance context.
+
 ## Portfolio Signal
 
 This lab demonstrates least-privilege review of agent profiles and the ability to connect tool scope, approval gates, and audit evidence in a GitHub-native control plane.

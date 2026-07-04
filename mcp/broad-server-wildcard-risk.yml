@@ -1,0 +1,18 @@
+# Broad wildcard allowlist risk example
+# This intentionally risky example is for educational artifact-reading practice only.
+# Do not use broad wildcard tool access without explicit review and approval.
+
+agent_profile:
+  name: "over-permissioned-agent"
+  tools:
+    - "read"
+    - "search"
+    - "governance-api/*"
+
+risk_notes:
+  risk_level: "high"
+  issue: "Wildcard access grants every available governance-api tool, including future tools not reviewed today."
+  safer_alternative:
+    tools:
+      - "governance-api/read-policy"
+      - "governance-api/read-audit-summary"

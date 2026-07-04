@@ -1,0 +1,19 @@
+{
+  "event": "preToolUse",
+  "sessionId": "session_2026_07_gh600_lab_002",
+  "timestamp": "2026-07-24T14:05:00Z",
+  "cwd": "/workspaces/github-agentic-sdlc-control-plane-lab",
+  "toolName": "search",
+  "toolArgs": {
+    "query": "*"
+  },
+  "policy": {
+    "rule": "narrow-broad-search-query",
+    "matched": true
+  },
+  "permissionDecision": "allow",
+  "rewrittenToolArgs": {
+    "query": "mcp allowlist workflow permissions"
+  },
+  "reason": "Broad search was narrowed to task-relevant terms."
+}

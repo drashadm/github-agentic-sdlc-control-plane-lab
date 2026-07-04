@@ -1,0 +1,16 @@
+{
+  "event": "preToolUse",
+  "sessionId": "session_2026_07_gh600_lab_001",
+  "timestamp": "2026-07-24T14:01:00Z",
+  "cwd": "/workspaces/github-agentic-sdlc-control-plane-lab",
+  "toolName": "execute",
+  "toolArgs": {
+    "command": "rm -rf artifacts/"
+  },
+  "policy": {
+    "rule": "deny-destructive-execute-without-human-approval",
+    "matched": true
+  },
+  "permissionDecision": "deny",
+  "reason": "Destructive command attempted without explicit human approval."
+}

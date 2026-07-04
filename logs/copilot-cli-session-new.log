@@ -1,0 +1,5 @@
+2026-07-24T13:00:00Z session_id=session_new_001 mode=cli state=new branch=feature/agent-lab-v1
+2026-07-24T13:00:04Z agent=planner tool=read path=README.md status=ok
+2026-07-24T13:00:11Z agent=planner tool=search query="MCP allowlist" status=ok results=3
+2026-07-24T13:00:22Z agent=planner artifact=artifacts/planner-output.json status=created
+2026-07-24T13:00:30Z status=waiting_for_review reason="Plan artifact requires approval before execution"

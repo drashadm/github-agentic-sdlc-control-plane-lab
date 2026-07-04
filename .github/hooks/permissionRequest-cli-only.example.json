@@ -1,0 +1,9 @@
+{
+  "event": "permissionRequest",
+  "scope": "CLI-only-example",
+  "sessionId": "session_2026_07_gh600_lab_004",
+  "timestamp": "2026-07-24T14:10:00Z",
+  "toolName": "execute",
+  "requestedAction": "run tests",
+  "note": "This example represents a CLI-specific permission request pattern. For cloud-agent style permission enforcement, prefer preToolUse controls."
+}

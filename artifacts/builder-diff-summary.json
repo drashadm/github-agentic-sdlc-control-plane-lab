@@ -1,0 +1,16 @@
+{
+  "artifact_type": "builder_diff_summary",
+  "version": "1.0",
+  "plan_artifact": "artifacts/planner-output.json",
+  "files_changed": [
+    "mcp/broad-server-wildcard-risk.yml",
+    ".github/hooks/preToolUse-deny-execute.example.json",
+    "docs/artifact-reading-guide.md"
+  ],
+  "assumptions": [
+    "Examples are educational and not production configs."
+  ],
+  "known_gaps": [
+    "No live MCP integration is implemented."
+  ]
+}

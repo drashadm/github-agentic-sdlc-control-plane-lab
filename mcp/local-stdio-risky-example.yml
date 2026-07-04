@@ -1,0 +1,24 @@
+# Risky local stdio MCP server example
+# This example is intentionally unsafe for artifact-reading practice.
+
+mcp-servers:
+  local-shell:
+    type: stdio
+    command: "node"
+    args:
+      - "shell-server.js"
+    tools:
+      - "local-shell/*"
+    env:
+      ACCESS_MODE: "broad"
+
+risk_notes:
+  risk_level: "high"
+  why_risky:
+    - "Wildcard tool access grants all local-shell tools."
+    - "Local shell capability can mutate or delete repository state."
+    - "Environment variables may expose sensitive context."
+  safe_operator_response:
+    - "Replace wildcard with explicit tools."
+    - "Require human approval for execute-like capabilities."
+    - "Document server trust boundary."

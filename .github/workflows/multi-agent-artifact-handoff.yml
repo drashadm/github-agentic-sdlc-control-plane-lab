@@ -1,0 +1,68 @@
+name: Multi-Agent Artifact Handoff
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: read
+
+concurrency:
+  group: multi-agent-handoff-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  planner:
+    runs-on: ubuntu-latest
+    outputs:
+      plan_artifact_name: ${{ steps.plan.outputs.plan_artifact_name }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Produce plan artifact marker
+        id: plan
+        run: |
+          echo "plan_artifact_name=planner-output" >> "$GITHUB_OUTPUT"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: planner-output
+          path: artifacts/planner-output.json
+
+  builder:
+    runs-on: ubuntu-latest
+    needs: planner
+    outputs:
+      builder_artifact_name: ${{ steps.builder.outputs.builder_artifact_name }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: ${{ needs.planner.outputs.plan_artifact_name }}
+          path: downloaded/planner
+      - name: Produce builder artifact marker
+        id: builder
+        run: |
+          echo "builder_artifact_name=builder-diff-summary" >> "$GITHUB_OUTPUT"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: builder-diff-summary
+          path: artifacts/builder-diff-summary.json
+
+  reviewer:
+    runs-on: ubuntu-latest
+    needs: builder
+    outputs:
+      reviewer_artifact_name: ${{ steps.review.outputs.reviewer_artifact_name }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: ${{ needs.builder.outputs.builder_artifact_name }}
+          path: downloaded/builder
+      - name: Produce reviewer artifact marker
+        id: review
+        run: |
+          echo "reviewer_artifact_name=reviewer-findings" >> "$GITHUB_OUTPUT"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: reviewer-findings
+          path: artifacts/reviewer-findings.json

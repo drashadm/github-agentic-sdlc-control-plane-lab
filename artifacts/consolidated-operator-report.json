@@ -1,0 +1,15 @@
+{
+  "artifact_type": "consolidated_operator_report",
+  "version": "1.0",
+  "artifacts_consumed": [
+    "planner-output.json",
+    "builder-diff-summary.json",
+    "reviewer-findings.json",
+    "security-audit-report.json"
+  ],
+  "decision": "ready_for_manual_review",
+  "unresolved_risks": [
+    "Examples should not be mistaken for production-safe configuration."
+  ],
+  "safe_next_action": "Review docs and labs, then open PR for public README polish."
+}

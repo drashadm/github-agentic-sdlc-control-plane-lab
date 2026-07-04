@@ -1,0 +1,23 @@
+{
+  "repository": "github-agentic-sdlc-control-plane-lab",
+  "facts": [
+    {
+      "id": "repo_fact_001",
+      "fact": "Executor agent is the only profile with execute access.",
+      "scope": "repository",
+      "source": ".github/agents/executor.agent.md",
+      "last_validated": "2026-07-24T14:00:00Z",
+      "expires_after_days": 28,
+      "status": "valid"
+    },
+    {
+      "id": "repo_fact_002",
+      "fact": "Security gate must run before consolidated operator report.",
+      "scope": "repository",
+      "source": ".github/workflows/consolidated-operator-report.yml",
+      "last_validated": "2026-07-24T14:00:00Z",
+      "expires_after_days": 28,
+      "status": "valid"
+    }
+  ]
+}

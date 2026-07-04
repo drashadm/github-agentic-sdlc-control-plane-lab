@@ -1,0 +1,14 @@
+{
+  "artifact_type": "reviewer_findings",
+  "version": "1.0",
+  "correctness": "pass_with_notes",
+  "plan_alignment": "aligned",
+  "findings": [
+    {
+      "severity": "medium",
+      "finding": "Risky MCP wildcard example must remain clearly labeled as unsafe.",
+      "recommendation": "Keep risk note adjacent to the wildcard example."
+    }
+  ],
+  "approval_recommendation": "approve_after_security_review"
+}

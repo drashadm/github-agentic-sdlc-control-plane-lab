@@ -1,0 +1,41 @@
+name: Security Gate
+
+on:
+  pull_request:
+    branches:
+      - main
+
+permissions:
+  contents: read
+  pull-requests: read
+  security-events: read
+
+concurrency:
+  group: security-gate-${{ github.head_ref || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  inspect-agent-permissions:
+    runs-on: ubuntu-latest
+    outputs:
+      risk_level: ${{ steps.risk.outputs.risk_level }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Inspect high-risk patterns
+        id: risk
+        run: |
+          if grep -R 'tools: \["\*"\]' .github/agents 2>/dev/null; then
+            echo "risk_level=high" >> "$GITHUB_OUTPUT"
+            exit 1
+          fi
+          if grep -R 'server/\*' .github/agents mcp 2>/dev/null; then
+            echo "risk_level=high" >> "$GITHUB_OUTPUT"
+            exit 1
+          fi
+          echo "risk_level=reviewed" >> "$GITHUB_OUTPUT"
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: security-audit-report
+          path: artifacts/security-audit-report.json

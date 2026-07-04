@@ -1,0 +1,18 @@
+{
+  "event": "postToolUse",
+  "sessionId": "session_2026_07_gh600_lab_003",
+  "timestamp": "2026-07-24T14:08:00Z",
+  "cwd": "/workspaces/github-agentic-sdlc-control-plane-lab",
+  "toolName": "read",
+  "toolArgs": {
+    "path": ".github/agents/executor.agent.md"
+  },
+  "toolResult": {
+    "status": "ok",
+    "bytesRead": 843
+  },
+  "additionalContext": {
+    "risk_note": "Executor agent includes execute access. Require approval before command use.",
+    "safe_next_action": "Review tools list and approval rule."
+  }
+}

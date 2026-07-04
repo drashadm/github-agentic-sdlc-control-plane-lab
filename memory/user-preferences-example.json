@@ -1,0 +1,16 @@
+{
+  "user_preferences": [
+    {
+      "id": "pref_001",
+      "preference": "Prefer artifact-first explanations over broad conceptual summaries.",
+      "scope": "user",
+      "last_confirmed": "2026-07-24T14:00:00Z",
+      "applies_to": [
+        "labs",
+        "docs",
+        "review prompts"
+      ]
+    }
+  ],
+  "operator_warning": "User preferences should not override repository safety rules or current artifact evidence."
+}

@@ -1,0 +1,48 @@
+name: Consolidated Operator Report
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  collect-evidence:
+    runs-on: ubuntu-latest
+    outputs:
+      evidence_status: ${{ steps.evidence.outputs.evidence_status }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Verify required artifacts
+        id: evidence
+        run: |
+          required=(
+            "artifacts/planner-output.json"
+            "artifacts/builder-diff-summary.json"
+            "artifacts/reviewer-findings.json"
+            "artifacts/security-audit-report.json"
+          )
+
+          for file in "${required[@]}"; do
+            if [ ! -f "$file" ]; then
+              echo "Missing $file"
+              echo "evidence_status=missing" >> "$GITHUB_OUTPUT"
+              exit 1
+            fi
+          done
+
+          echo "evidence_status=complete" >> "$GITHUB_OUTPUT"
+
+  publish-report:
+    runs-on: ubuntu-latest
+    needs: collect-evidence
+    if: needs.collect-evidence.outputs.evidence_status == 'complete'
+    steps:
+      - uses: actions/checkout@v4
+      - name: Upload consolidated report
+        uses: actions/upload-artifact@v4
+        with:
+          name: consolidated-operator-report
+          path: artifacts/consolidated-operator-report.json

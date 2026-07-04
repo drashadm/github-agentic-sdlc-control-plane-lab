@@ -1,0 +1,13 @@
+{
+  "artifact_type": "security_audit_report",
+  "version": "1.0",
+  "risk_level": "medium",
+  "permission_review": "No agent uses tools: [\"*\"]. Executor is the only profile with execute access.",
+  "mcp_review": "Wildcard MCP access appears only in a clearly labeled risk example.",
+  "required_human_approval": [
+    "executor command execution",
+    "broad MCP expansion",
+    "workflow permission changes"
+  ],
+  "audit_evidence_status": "complete"
+}

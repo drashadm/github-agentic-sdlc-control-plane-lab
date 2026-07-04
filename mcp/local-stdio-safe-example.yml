@@ -1,0 +1,21 @@
+# Local stdio MCP server example
+# This represents a local process started by command + args.
+
+mcp-servers:
+  repo-metadata:
+    type: stdio
+    command: "python"
+    args:
+      - "tools/repo_metadata_server.py"
+    tools:
+      - "repo-metadata/list-files"
+      - "repo-metadata/read-metadata"
+    env:
+      LAB_MODE: "true"
+
+risk_notes:
+  trust_boundary: "Local process in controlled development environment."
+  allowed_tools: "Read-only metadata tools."
+  denied_tools:
+    - "repo-metadata/write"
+    - "repo-metadata/delete"

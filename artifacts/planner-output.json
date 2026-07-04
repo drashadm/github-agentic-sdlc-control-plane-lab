@@ -1,0 +1,22 @@
+{
+  "artifact_type": "planner_output",
+  "version": "1.0",
+  "request": "Add governance examples for MCP allowlists and hook permission decisions.",
+  "affected_files": [
+    "mcp/",
+    ".github/hooks/",
+    "docs/artifact-reading-guide.md"
+  ],
+  "success_criteria": [
+    "MCP examples distinguish narrow and broad allowlists.",
+    "Hook examples include deny and post-tool context cases.",
+    "Artifact-reading guide explains safe operator response."
+  ],
+  "risks": [
+    {
+      "risk": "Wildcard MCP examples copied into production",
+      "mitigation": "Mark risky examples clearly."
+    }
+  ],
+  "requires_approval_before_execution": true
+}

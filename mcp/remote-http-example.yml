@@ -1,0 +1,17 @@
+# Remote HTTP MCP server example
+# A top-level URL indicates a remote transport boundary.
+
+mcp-servers:
+  governance-api:
+    type: http
+    url: "https://example.invalid/mcp/governance"
+    tools:
+      - "governance-api/read-policy"
+      - "governance-api/read-audit-summary"
+
+risk_notes:
+  trust_boundary: "Remote service. Requires review of data exposure and identity."
+  safe_use:
+    - "Read-only tools only."
+    - "No secrets in plain config."
+    - "Document data sent to remote service."

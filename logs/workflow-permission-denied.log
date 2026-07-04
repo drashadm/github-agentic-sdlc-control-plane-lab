@@ -1,0 +1,5 @@
+2026-07-24T17:00:00Z run_id=987654321 run_number=42 workflow=security-gate ref=refs/pull/12/merge
+2026-07-24T17:00:09Z job=inspect-agent-permissions step=Inspect high-risk patterns status=failed
+2026-07-24T17:00:09Z error="Resource not accessible by integration"
+2026-07-24T17:00:09Z likely_cause="Workflow permissions do not include required read scope for requested inspection"
+2026-07-24T17:00:10Z safe_next_action="Inspect permissions block and avoid broad write permissions unless justified"

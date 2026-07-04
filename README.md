@@ -82,6 +82,8 @@ org-governance/    Organization-level custom agent governance examples
 7. Review workflow governance patterns under `.github/workflows/`.
 8. Complete the labs under `labs/` by reading the artifacts and explaining what is safe, risky, broken, or missing.
 
+Use `labs/README.md` for the recommended lab order, difficulty levels, and answer-key guidance.
+
 ---
 
 ## Design Principles
@@ -119,6 +121,9 @@ Agents reason their way toward actions. Control points enforce boundaries regard
 | Lab 05 | Evaluate a hook permission decision      |
 | Lab 06 | Diagnose memory drift across agent tasks |
 | Lab 07 | Review a multi-agent handoff chain       |
+| Lab 08 | Detect reviewer note leakage             |
+| Lab 09 | Diagnose schema validation failure       |
+| Lab 10 | Trace a GitHub Actions artifact handoff  |
 
 ---
 

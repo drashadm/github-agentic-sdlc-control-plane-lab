@@ -21,7 +21,7 @@ Focus:
 
 ## v0.2 - Artifact Schemas and Public Status Polish
 
-Status: In progress
+Status: Complete
 
 Focus:
 
@@ -33,7 +33,7 @@ Focus:
 
 ## v0.3 - Expanded Labs with Answer Keys
 
-Status: Planned
+Status: Complete in branch
 
 Focus:
 

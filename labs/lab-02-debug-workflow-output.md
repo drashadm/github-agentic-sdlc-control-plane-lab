@@ -1,32 +1,58 @@
 # Lab 02: Debug Workflow Output Handoff
 
+## Difficulty
+
+Intermediate.
+
+## Estimated Time
+
+15-20 minutes.
+
 ## Scenario
 
-A downstream job cannot find the planner artifact name.
+A builder job cannot find the planner artifact it expects. The workflow is meant to pass an artifact name from a planner job to a builder job through GitHub Actions outputs.
 
-## Artifact to Inspect
+## Artifacts to Inspect
 
-`.github/workflows/multi-agent-artifact-handoff.yml`
+- `.github/workflows/multi-agent-artifact-handoff.yml`
+- `artifacts/planner-output.json`
+- `artifacts/builder-diff-summary.json`
 
-Look for:
+## What You Are Looking For
 
-- `outputs`
-- `$GITHUB_OUTPUT`
-- `needs.planner.outputs.plan_artifact_name`
-- `actions/upload-artifact`
-- `actions/download-artifact`
+Trace the producing job, step output, job output, `needs` dependency, upload artifact name, and download artifact name. The key question is whether the name written to `$GITHUB_OUTPUT` matches the name later used by `actions/download-artifact`.
 
 ## Questions
 
-1. Which job produces the output?
-2. Which job consumes the output?
-3. What happens if the output key name changes?
-4. What should the safe operator inspect first?
+1. Which job produces `plan_artifact_name`?
+2. Which job consumes `needs.planner.outputs.plan_artifact_name`?
+3. Where is the planner artifact name written?
+4. What breaks if the output key or artifact name changes?
+5. What should the operator inspect first?
 
 ## Expected Reasoning Path
 
-The planner job writes `plan_artifact_name` to `$GITHUB_OUTPUT`. The builder job consumes it through `needs.planner.outputs.plan_artifact_name`.
+Start with the `planner` job and find its `outputs` block. Follow that output to the step with `id: plan`, then verify the line that writes to `$GITHUB_OUTPUT`. Next, inspect the `builder` job, confirm it declares `needs: planner`, and verify the download name uses the planner output. Finally, compare the uploaded artifact name with the downloaded artifact name.
 
-## Safe Operator Response
+## Answer Key
 
-Inspect producing job logs first, verify output key, then verify artifact upload name matches download name.
+1. The `planner` job produces `plan_artifact_name`.
+2. The `builder` job consumes it through `needs.planner.outputs.plan_artifact_name`.
+3. The `Produce plan artifact marker` step writes `plan_artifact_name=planner-output` to `$GITHUB_OUTPUT`.
+4. The downstream download can fail because the builder job asks for a name that was never produced or exposed.
+5. Inspect the producing job logs and workflow YAML before changing downstream logic.
+
+## Common Wrong Answers
+
+- Debugging the builder code before checking the planner output.
+- Assuming artifact file paths and artifact names are interchangeable.
+- Removing `needs` instead of fixing the handoff.
+- Treating a successful checkout as proof that the artifact exists.
+
+## Safe Operator Decision
+
+Block or rerun the workflow after verifying the output key and artifact upload/download names. Do not approve the downstream result until the handoff is traceable.
+
+## Portfolio Signal
+
+This lab shows the ability to debug GitHub Actions as an evidence pipeline, where outputs, dependencies, and artifacts form reviewable agent handoffs.

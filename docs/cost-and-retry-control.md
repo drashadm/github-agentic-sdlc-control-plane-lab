@@ -13,3 +13,15 @@ Cost controls are part of governance because agentic workflows can spend money w
 | repeated MCP tool timeout | Agent burns tool calls while obscuring service or permission failure | Use backoff, timeout budgets, and operator-visible failure state |
 | repeated LLM regeneration loop | Agent spends tokens producing variations that do not satisfy the handoff | Add validation gates, cost annotations, and a stop condition |
 | downstream agent keeps guessing after missing context | Final report sounds complete despite incomplete evidence | Fail closed when required context is absent |
+
+## Retry Loops Caused by Broken State Handoffs
+
+Missing artifacts or empty workflow outputs can trigger repeated download attempts, LLM regeneration loops, or repeated tool calls. These loops can burn credits while making the original state handoff failure harder to see.
+
+State handoff retries should have:
+
+* max retry count
+* backoff
+* explicit failed state
+* cost/rate-limit annotation
+* no fallback to stale context unless explicitly approved and labeled

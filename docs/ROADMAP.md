@@ -83,6 +83,19 @@ Focus:
 * educational agent runner workflow
 * agent profile review artifact and schema
 
+## v0.4.2 - Lab 02 State Handoff Nuance
+
+Status: Complete in branch
+
+Focus:
+
+* workflow outputs as state contracts
+* deterministic artifact names
+* stale cache/context risk
+* retry/token-waste loops
+* fail-closed downstream gating
+* state serializability lab upgrade
+
 ## v0.5 - More Realistic Logs and Failure Scenarios
 
 Status: Planned

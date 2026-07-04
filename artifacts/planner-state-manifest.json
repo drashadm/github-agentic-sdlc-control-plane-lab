@@ -1,0 +1,23 @@
+{
+  "artifact_type": "planner_state_manifest",
+  "version": "1.0",
+  "producing_agent": "planner",
+  "consuming_agent": "builder",
+  "run_id": "run_2026_07_state_lab_042",
+  "run_attempt": 1,
+  "commit_sha": "183dfa2490b144ad2d13373497a75c51ab604d53",
+  "source_branch": "v0.4.2-lab-02-state-handoff-nuance",
+  "expected_artifact_name": "planner-output",
+  "normalized_artifact_name": "planner-output",
+  "output_key": "plan_artifact_name",
+  "produced_at": "2026-07-04T17:20:00Z",
+  "state_status": "valid",
+  "schema_required": "schemas/planner-state-manifest.schema.json",
+  "downstream_blocked_if_missing": true,
+  "context_budget": {
+    "estimated_tokens": 850,
+    "max_allowed_tokens": 3000,
+    "oversized": false
+  },
+  "safe_next_action": "Allow builder invocation only after the planner artifact name and manifest are validated for this run."
+}

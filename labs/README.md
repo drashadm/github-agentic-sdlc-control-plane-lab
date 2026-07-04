@@ -17,7 +17,7 @@ Advanced labs focus on agent-specific risks that may not appear in normal CI/CD 
 | Lab | Title | Difficulty | Primary Skill |
 | --- | ----- | ---------- | ------------- |
 | Lab 01 | Read a Custom Agent File | Beginner | Agent profile and least-privilege review |
-| Lab 02 | Debug Workflow Output Handoff | Intermediate | GitHub Actions output and artifact tracing |
+| Lab 02 | Debug Workflow Output Handoff | Intermediate | State serializability and deterministic handoff validation |
 | Lab 03 | Identify MCP Tool Access Risk | Intermediate | MCP allowlist and trust-boundary review |
 | Lab 04 | Analyze a Session Log | Beginner | Session continuity and log inspection |
 | Lab 05 | Hook Permission Decision | Beginner | Fail-closed hook decision review |
@@ -55,3 +55,5 @@ Use this pattern when moving from surface artifact inspection to production-grad
 * Operator decision: Should the human approve, block, escalate, regenerate, narrow permissions, or preserve evidence?
 
 Lab 01 now models this deeper review pattern for the remaining labs by treating agent profiles as prompt-and-capability control surfaces, not passive documentation.
+
+Lab 02 extends the pattern by treating workflow outputs and artifact names as serialized state contracts. It shows why downstream agents must receive deterministic, schema-valid state for the current run instead of guessing or using stale cache context.

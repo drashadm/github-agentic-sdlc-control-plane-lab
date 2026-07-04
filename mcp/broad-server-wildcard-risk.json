@@ -1,0 +1,21 @@
+{
+  "example_type": "broad_mcp_wildcard_risk",
+  "educational_only": true,
+  "agent_profile": {
+    "name": "over-permissioned-agent",
+    "tools": [
+      "read",
+      "search",
+      "governance-api/*"
+    ]
+  },
+  "risk_notes": {
+    "risk_level": "high",
+    "issue": "Wildcard access grants current and future governance-api tools that may not have been reviewed.",
+    "safer_alternative": [
+      "governance-api/read-policy",
+      "governance-api/read-audit-summary"
+    ]
+  },
+  "safe_next_action": "Replace wildcard access with explicit reviewed tools before production use."
+}

@@ -1,0 +1,22 @@
+{
+  "example_type": "local_stdio_mcp_safe_example",
+  "educational_only": true,
+  "mcp_server": {
+    "name": "repo-metadata",
+    "transport": "stdio",
+    "command_placeholder": "[trusted read-only metadata server]",
+    "tools": [
+      "repo-metadata/list-files",
+      "repo-metadata/read-metadata"
+    ]
+  },
+  "risk_notes": {
+    "trust_boundary": "Local subprocess in a controlled development environment.",
+    "allowed_behavior": "Read-only repository metadata lookup.",
+    "denied_behavior": [
+      "repo-metadata/write",
+      "repo-metadata/delete",
+      "repo-metadata/execute"
+    ]
+  }
+}

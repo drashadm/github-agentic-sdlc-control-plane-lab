@@ -1,0 +1,18 @@
+{
+  "server_name": "governance-api",
+  "server_version": "2026.07.educational",
+  "transport": "http",
+  "discovered_at": "2026-07-04T18:15:00Z",
+  "run_id": "run_2026_07_mcp_lab_003",
+  "commit_sha": "3de3711f9d3d477ed86a4c9cda5a69cdfbc6aeff",
+  "declared_tools": [
+    "governance-api/read-policy",
+    "governance-api/read-audit-summary"
+  ],
+  "newly_discovered_tools": [
+    "governance-api/write-policy-draft"
+  ],
+  "wildcard_access_enabled": true,
+  "review_status": "requires_human_review",
+  "safe_next_action": "Block wildcard access until newly discovered tools are reviewed, documented, and explicitly allowed."
+}

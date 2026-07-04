@@ -17,5 +17,6 @@ Schema validation does not prove an agent was correct. It proves the artifact is
 | `artifacts/planner-context-raw-malformed.json` | `schemas/agent-handoff-v2.schema.json` | Intentionally malformed artifact for teaching schema drift and silent-success risk; it should parse as JSON but fail the expected handoff schema. |
 | `artifacts/workflow-validation-report.json` | `schemas/workflow-validation-report.schema.json` | Preserves workflow review evidence before downstream agent execution. |
 | `artifacts/agent-profile-review-report.json` | `schemas/agent-profile-review-report.schema.json` | Preserves evidence from reviewing agent profile and control-plane file changes. |
+| `artifacts/mcp-boundary-review-report.json` | `schemas/mcp-boundary-review-report.schema.json` | Preserves evidence from reviewing MCP tool boundaries and agent authority expansion. |
 | `artifacts/planner-state-manifest.json` | `schemas/planner-state-manifest.schema.json` | Teaches state serializability and deterministic planner-to-builder handoffs. |
 | `artifacts/stale-agent-state-cache-example.json` | `schemas/stale-agent-state-cache-example.schema.json` | Demonstrates stale context risk when downstream agents fall back to previous-run state. |

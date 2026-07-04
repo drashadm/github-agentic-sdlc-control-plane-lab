@@ -1,0 +1,81 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "mcp-boundary-review-report.schema.json",
+  "title": "MCP Boundary Review Report Artifact",
+  "description": "Educational schema for preserving MCP tool-boundary review evidence.",
+  "type": "object",
+  "required": [
+    "artifact_type",
+    "version",
+    "mcp_configs_reviewed",
+    "agent_profiles_reviewed",
+    "explicit_tools",
+    "wildcard_tools",
+    "remote_servers",
+    "local_stdio_servers",
+    "warnings",
+    "blocking_findings",
+    "safe_next_action"
+  ],
+  "properties": {
+    "artifact_type": {
+      "const": "mcp_boundary_review_report"
+    },
+    "version": {
+      "type": "string"
+    },
+    "mcp_configs_reviewed": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "agent_profiles_reviewed": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "explicit_tools": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "wildcard_tools": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "remote_servers": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "local_stdio_servers": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "warnings": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "blocking_findings": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "safe_next_action": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "additionalProperties": true
+}

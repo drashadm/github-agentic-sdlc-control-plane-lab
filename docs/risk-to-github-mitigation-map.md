@@ -9,7 +9,7 @@ This document maps common agentic SDLC risks to observable GitHub symptoms and p
 | Hidden reasoning | No assumptions, scope, decision trail, or artifact handoff | Require a plan artifact; link workflow runs; record key decisions in PR comments or review artifacts |
 | Blind trust in automation | "CI passed, ship it" mindset without human judgment | Combine checks with CODEOWNERS, required reviews, and risk-based approvals |
 | Stale memory or context drift | Agent resumes old assumptions that conflict with current repository state | Validate memory against current files, branch, and PR context before execution |
-| Risky MCP expansion | Agent has broad tool access such as `server/*` without justification | Use explicit MCP tool allowlists; require security review for new tools or remote servers |
+| Risky MCP expansion | Agent has broad tool access such as `server/*`, newly discovered server tools, or undocumented remote/local MCP boundaries | Use explicit MCP tool allowlists; require MCP boundary review artifacts, CODEOWNERS review, and human approval for new tools, wildcards, remote servers, or local stdio subprocess boundaries |
 | Workflow permission creep | Workflow permissions expand from read-only to write-all without clear need | Review permissions blocks in workflow files; require approval for permission changes |
 | Reviewer-note leakage | Internal review comment appears in final published docs or PR output | Add final-render review; require artifact cleanup checks before publish or merge |
 | Missing audit evidence | Final report exists but does not link plan, review, logs, or security findings | Require consolidated operator report to list consumed artifacts and unresolved risks |

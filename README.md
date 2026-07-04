@@ -55,7 +55,7 @@ Humans approve high risk action.
 ```text
 .github/
   agents/          Custom agent profiles with scoped tool configurations
-  workflows/       GitHub Actions governance patterns
+  workflows/       GitHub Actions governance patterns, including an inert educational agent-runner review workflow
   hooks/           Hook and permission-decision examples
   instructions/    Repository-level agent instructions
   prompts/         Reusable prompts for planning, review, and audit

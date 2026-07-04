@@ -1,0 +1,20 @@
+{
+  "artifact_type": "agent_profile_review_report",
+  "version": "1.0",
+  "profiles_reviewed": [
+    ".github/agents/executor.agent.md",
+    ".github/agents/reviewer.agent.md"
+  ],
+  "control_plane_files_checked": [
+    ".github/agents/**",
+    ".github/workflows/**",
+    ".github/hooks/**",
+    "mcp/**"
+  ],
+  "warnings": [
+    "Executor profile includes execute access and requires explicit approval before use.",
+    "Agent profile changes should be reviewed like source code, IAM policy, or workflow permission changes."
+  ],
+  "blocking_findings": [],
+  "safe_next_action": "Require human review before binding high-risk tools from changed agent profiles."
+}

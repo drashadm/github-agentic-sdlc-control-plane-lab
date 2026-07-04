@@ -44,3 +44,14 @@ Read the artifact first, write your answer, then compare against the answer key.
 * Did the workflow preserve evidence?
 * Did the final report include unresolved risks?
 * Did a human approval gate exist for high-risk action?
+
+## Lab Nuance Pattern
+
+Use this pattern when moving from surface artifact inspection to production-grade agentic review:
+
+* Surface issue: What broke in the visible artifact?
+* Agentic issue: How could an autonomous agent continue incorrectly?
+* Control-plane issue: What deterministic GitHub/MCP/workflow control should prevent it?
+* Operator decision: Should the human approve, block, escalate, regenerate, narrow permissions, or preserve evidence?
+
+Lab 01 now models this deeper review pattern for the remaining labs by treating agent profiles as prompt-and-capability control surfaces, not passive documentation.

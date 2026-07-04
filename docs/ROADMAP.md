@@ -70,6 +70,19 @@ Focus:
 * security gate distinction between educational risk examples and active config risk
 * Agentic Nuance sections across all labs
 
+## v0.4.1 - Lab 01 Agent Profile Nuance
+
+Status: Complete in branch
+
+Focus:
+
+* deeper Lab 01 agent profile threat model
+* prompt-and-capability control surfaces
+* executor vs reviewer authority boundaries
+* deterministic guardrails for high-risk tool use
+* educational agent runner workflow
+* agent profile review artifact and schema
+
 ## v0.5 - More Realistic Logs and Failure Scenarios
 
 Status: Planned

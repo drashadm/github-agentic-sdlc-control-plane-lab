@@ -1,0 +1,121 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "agent-handoff-v2.schema.json",
+  "title": "Agent Handoff V2 Artifact",
+  "description": "Educational schema for validating advanced agent-to-agent handoff artifacts.",
+  "type": "object",
+  "required": [
+    "artifact_type",
+    "version",
+    "producing_agent",
+    "consuming_agent",
+    "run_id",
+    "commit_sha",
+    "source_branch",
+    "produced_at",
+    "handoff_summary",
+    "output_files",
+    "risk_flags",
+    "context_budget",
+    "validation_status"
+  ],
+  "properties": {
+    "artifact_type": {
+      "const": "agent_handoff_v2"
+    },
+    "version": {
+      "type": "string"
+    },
+    "producing_agent": {
+      "type": "string",
+      "minLength": 1
+    },
+    "consuming_agent": {
+      "type": "string",
+      "minLength": 1
+    },
+    "run_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "commit_sha": {
+      "type": "string",
+      "minLength": 7
+    },
+    "source_branch": {
+      "type": "string",
+      "minLength": 1
+    },
+    "produced_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "handoff_summary": {
+      "type": "string",
+      "minLength": 1
+    },
+    "output_files": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "path",
+          "purpose",
+          "change_type"
+        ],
+        "properties": {
+          "path": {
+            "type": "string",
+            "minLength": 1
+          },
+          "purpose": {
+            "type": "string",
+            "minLength": 1
+          },
+          "change_type": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "risk_flags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "context_budget": {
+      "type": "object",
+      "required": [
+        "estimated_tokens",
+        "max_allowed_tokens",
+        "oversized"
+      ],
+      "properties": {
+        "estimated_tokens": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "max_allowed_tokens": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "oversized": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": true
+    },
+    "validation_status": {
+      "enum": [
+        "pending",
+        "valid",
+        "invalid",
+        "blocked"
+      ]
+    }
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,29 @@
+{
+  "artifact_type": "agent_handoff_v2",
+  "version": "2.0",
+  "producing_agent": "planner",
+  "consuming_agent": "builder",
+  "run_id": "run_2026_07_agentic_lab_malformed",
+  "commit_sha": "102f56af42010e409548ce0c2a2228c535785db9",
+  "source_branch": "v0.3.1-agentic-failure-modes",
+  "produced_at": "2026-07-04T16:35:00Z",
+  "code_changes": "Intentionally malformed educational handoff that uses a drifted summary key.",
+  "target_files": [
+    {
+      "path": "docs/advanced-agentic-failure-modes.md",
+      "purpose": "Demonstrate schema drift.",
+      "change_type": "add"
+    }
+  ],
+  "risk_flags": [
+    "schema-drift",
+    "silent-success-risk"
+  ],
+  "context_budget": {
+    "estimated_tokens": 900,
+    "max_allowed_tokens": 4000,
+    "oversized": false
+  },
+  "processed_files_count": 0,
+  "note": "This artifact is intentionally malformed for educational practice. It is safe, inert, and should parse as JSON while failing the agent handoff v2 schema."
+}

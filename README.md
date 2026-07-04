@@ -77,10 +77,11 @@ org-governance/    Organization-level custom agent governance examples
 2. Read `docs/ROADMAP.md` for planned polish and validation milestones.
 3. Read `docs/gh-600-domain-map.md` to understand the six major capability areas.
 4. Review `docs/artifact-schema-map.md`, `docs/risk-to-github-mitigation-map.md`, and `docs/agentic-threat-model-map.md` for governance maps.
-5. Inspect the agent profiles under `.github/agents/` and note how tool access is scoped.
-6. Review MCP server examples under `mcp/`.
-7. Review workflow governance patterns under `.github/workflows/`.
-8. Complete the labs under `labs/` by reading the artifacts and explaining what is safe, risky, broken, or missing.
+5. Read `docs/advanced-agentic-failure-modes.md`, `docs/context-window-gating.md`, and `docs/cost-and-retry-control.md` for deeper agentic failure patterns.
+6. Inspect the agent profiles under `.github/agents/` and note how tool access is scoped.
+7. Review MCP server examples under `mcp/`.
+8. Review workflow governance patterns under `.github/workflows/`.
+9. Complete the labs under `labs/` by reading the artifacts and explaining what is safe, risky, broken, or missing.
 
 Use `labs/README.md` for the recommended lab order, difficulty levels, and answer-key guidance.
 
@@ -124,6 +125,7 @@ Agents reason their way toward actions. Control points enforce boundaries regard
 | Lab 08 | Detect reviewer note leakage             |
 | Lab 09 | Diagnose schema validation failure       |
 | Lab 10 | Trace a GitHub Actions artifact handoff  |
+| Lab 11 | Advanced agent handoff failure           |
 
 ---
 

@@ -44,6 +44,19 @@ Focus:
 * Common wrong answers
 * Safe operator decisions
 
+## v0.3.1 - Advanced Agentic Failure Modes
+
+Status: Complete in branch
+
+Focus:
+
+* Schema drift
+* Silent success
+* Context-window gating
+* State poisoning
+* Retry and cost controls
+* Advanced handoff failure lab
+
 ## v0.4 - Workflow Validation and Dry-Run Checks
 
 Status: Planned

@@ -1,0 +1,34 @@
+{
+  "artifact_type": "agent_handoff_v2",
+  "version": "2.0",
+  "producing_agent": "planner",
+  "consuming_agent": "builder",
+  "run_id": "run_2026_07_agentic_lab_031",
+  "commit_sha": "102f56af42010e409548ce0c2a2228c535785db9",
+  "source_branch": "v0.3.1-agentic-failure-modes",
+  "produced_at": "2026-07-04T16:30:00Z",
+  "handoff_summary": "Planner identified safe documentation-only updates for advanced agentic failure mode education.",
+  "output_files": [
+    {
+      "path": "docs/advanced-agentic-failure-modes.md",
+      "purpose": "Explain silent and partial agentic workflow failures.",
+      "change_type": "add"
+    },
+    {
+      "path": "labs/lab-11-advanced-agent-handoff-failure.md",
+      "purpose": "Teach schema drift, silent success, and context gating review.",
+      "change_type": "add"
+    }
+  ],
+  "risk_flags": [
+    "documentation-only",
+    "requires-schema-validation",
+    "preserve-unresolved-risks"
+  ],
+  "context_budget": {
+    "estimated_tokens": 1200,
+    "max_allowed_tokens": 4000,
+    "oversized": false
+  },
+  "validation_status": "valid"
+}

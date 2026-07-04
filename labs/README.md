@@ -4,13 +4,15 @@ This directory contains safe, inert artifact-reading labs for GitHub-native agen
 
 ## Recommended Order
 
-Work through the labs in numeric order. Labs 01-03 build basic artifact literacy, Labs 04-07 connect artifacts across sessions and agents, and Labs 08-10 add publication quality, schema validation, and GitHub Actions handoff drills.
+Work through the labs in numeric order. Labs 01-03 build basic artifact literacy, Labs 04-07 connect artifacts across sessions and agents, Labs 08-10 add publication quality, schema validation, and GitHub Actions handoff drills, and Lab 11 covers advanced agentic handoff failure.
 
 ## Skill Focus
 
 Use each answer key after attempting the questions yourself. The answer keys are designed to teach operator reasoning, not to replace inspection of the source artifacts.
 
 These labs are educational and safe/inert. They do not include runnable exploit payloads, real secrets, or production integrations.
+
+Advanced labs focus on agent-specific risks that may not appear in normal CI/CD troubleshooting, such as schema drift, silent success, context-window overload, state poisoning, and retry/cost loops.
 
 | Lab | Title | Difficulty | Primary Skill |
 | --- | ----- | ---------- | ------------- |
@@ -24,6 +26,7 @@ These labs are educational and safe/inert. They do not include runnable exploit 
 | Lab 08 | Reviewer Note Leakage | Beginner / Intermediate | Final artifact cleanup and publish readiness |
 | Lab 09 | Schema Validation Failure | Intermediate | Schema-aware artifact governance |
 | Lab 10 | GitHub Actions Artifact Handoff Drill | Intermediate | Workflow dependency and evidence gating |
+| Lab 11 | Advanced Agent Handoff Failure | Advanced | Schema drift, context-window governance, and silent failure prevention |
 
 ## How to Use the Answer Keys
 

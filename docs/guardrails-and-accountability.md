@@ -73,6 +73,12 @@ Risk factors:
 - tool behavior that is not logged or artifacted
 - allowlists treated as complete security boundaries
 
+## Risk-to-Control Mapping
+
+Agent risks should be translated into observable GitHub symptoms and GitHub-native mitigations. A risk is easier to govern when reviewers can see how it appears in a pull request, workflow run, artifact, branch rule, hook decision, or audit trail.
+
+Use `docs/risk-to-github-mitigation-map.md` to connect common agentic SDLC risks to practical controls such as required reviews, CODEOWNERS, branch protection, workflow permission limits, environments, and explicit MCP allowlists.
+
 ## Workflow Artifacts as Evidence
 
 A workflow artifact should answer:

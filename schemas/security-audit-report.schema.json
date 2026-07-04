@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "security-audit-report.schema.json",
+  "title": "Security Audit Report Artifact",
+  "description": "Minimum reviewable shape for security and permission audit artifacts.",
+  "type": "object",
+  "required": [
+    "artifact_type",
+    "version",
+    "risk_level",
+    "permission_review",
+    "mcp_review",
+    "required_human_approval",
+    "audit_evidence_status"
+  ],
+  "properties": {
+    "artifact_type": {
+      "const": "security_audit_report"
+    },
+    "version": {
+      "type": "string"
+    },
+    "risk_level": {
+      "type": "string"
+    },
+    "permission_review": {
+      "type": "string"
+    },
+    "mcp_review": {
+      "type": "string"
+    },
+    "required_human_approval": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "audit_evidence_status": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}

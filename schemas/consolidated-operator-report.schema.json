@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "consolidated-operator-report.schema.json",
+  "title": "Consolidated Operator Report Artifact",
+  "description": "Minimum reviewable shape for the final operator decision artifact.",
+  "type": "object",
+  "required": [
+    "artifact_type",
+    "version",
+    "artifacts_consumed",
+    "decision",
+    "unresolved_risks",
+    "safe_next_action"
+  ],
+  "properties": {
+    "artifact_type": {
+      "const": "consolidated_operator_report"
+    },
+    "version": {
+      "type": "string"
+    },
+    "artifacts_consumed": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "decision": {
+      "type": "string"
+    },
+    "unresolved_risks": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "safe_next_action": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "additionalProperties": true
+}

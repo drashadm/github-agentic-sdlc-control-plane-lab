@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "builder-diff-summary.schema.json",
+  "title": "Builder Diff Summary Artifact",
+  "description": "Minimum reviewable shape for a builder handoff artifact.",
+  "type": "object",
+  "required": [
+    "artifact_type",
+    "version",
+    "plan_artifact",
+    "files_changed",
+    "assumptions",
+    "known_gaps"
+  ],
+  "properties": {
+    "artifact_type": {
+      "const": "builder_diff_summary"
+    },
+    "version": {
+      "type": "string"
+    },
+    "plan_artifact": {
+      "type": "string",
+      "minLength": 1
+    },
+    "files_changed": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "assumptions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "known_gaps": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "additionalProperties": true
+}

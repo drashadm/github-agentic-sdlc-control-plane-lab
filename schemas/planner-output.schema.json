@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "planner-output.schema.json",
+  "title": "Planner Output Artifact",
+  "description": "Minimum reviewable shape for an agent planning artifact.",
+  "type": "object",
+  "required": [
+    "artifact_type",
+    "version",
+    "request",
+    "affected_files",
+    "success_criteria",
+    "risks",
+    "requires_approval_before_execution"
+  ],
+  "properties": {
+    "artifact_type": {
+      "const": "planner_output"
+    },
+    "version": {
+      "type": "string"
+    },
+    "request": {
+      "type": "string",
+      "minLength": 1
+    },
+    "affected_files": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "success_criteria": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "risks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "risk",
+          "mitigation"
+        ],
+        "properties": {
+          "risk": {
+            "type": "string"
+          },
+          "mitigation": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "requires_approval_before_execution": {
+      "type": "boolean"
+    }
+  },
+  "additionalProperties": true
+}

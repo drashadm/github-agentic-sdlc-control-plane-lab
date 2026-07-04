@@ -255,3 +255,11 @@ Memory improves continuity but can cause drift if stale.
 ### Safe Operator Response
 
 Validate against current repository files, prune stale facts, and regenerate state artifacts.
+
+## Schema Validation as Artifact Governance
+
+Structured artifacts are easier to inspect because important fields have predictable names and locations. Schemas make missing fields visible before a downstream workflow, reviewer, or operator relies on an incomplete handoff.
+
+Schemas help downstream jobs trust artifact shape, not artifact truth. Validation can show that a planner output includes success criteria, risks, affected files, and approval state, but it does not prove the agent made the right plan. It proves the artifact is complete enough to review.
+
+Use `docs/artifact-schema-map.md` to understand which sample artifacts map to which schemas, and inspect `schemas/` for the minimum required fields.

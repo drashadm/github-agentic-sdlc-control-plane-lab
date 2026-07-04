@@ -74,11 +74,13 @@ org-governance/    Organization-level custom agent governance examples
 ## How to Use This Lab
 
 1. Start with `docs/source-ingestion-notes.md` for full context on the lab design.
-2. Read `docs/gh-600-domain-map.md` to understand the six major capability areas.
-3. Inspect the agent profiles under `.github/agents/` and note how tool access is scoped.
-4. Review MCP server examples under `mcp/`.
-5. Review workflow governance patterns under `.github/workflows/`.
-6. Complete the labs under `labs/` by reading the artifacts and explaining what is safe, risky, broken, or missing.
+2. Read `docs/ROADMAP.md` for planned polish and validation milestones.
+3. Read `docs/gh-600-domain-map.md` to understand the six major capability areas.
+4. Review `docs/artifact-schema-map.md`, `docs/risk-to-github-mitigation-map.md`, and `docs/agentic-threat-model-map.md` for governance maps.
+5. Inspect the agent profiles under `.github/agents/` and note how tool access is scoped.
+6. Review MCP server examples under `mcp/`.
+7. Review workflow governance patterns under `.github/workflows/`.
+8. Complete the labs under `labs/` by reading the artifacts and explaining what is safe, risky, broken, or missing.
 
 ---
 

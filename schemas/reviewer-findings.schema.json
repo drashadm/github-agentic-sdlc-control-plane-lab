@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reviewer-findings.schema.json",
+  "title": "Reviewer Findings Artifact",
+  "description": "Minimum reviewable shape for reviewer findings.",
+  "type": "object",
+  "required": [
+    "artifact_type",
+    "version",
+    "correctness",
+    "plan_alignment",
+    "findings",
+    "approval_recommendation"
+  ],
+  "properties": {
+    "artifact_type": {
+      "const": "reviewer_findings"
+    },
+    "version": {
+      "type": "string"
+    },
+    "correctness": {
+      "type": "string"
+    },
+    "plan_alignment": {
+      "type": "string"
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "severity",
+          "finding",
+          "recommendation"
+        ],
+        "properties": {
+          "severity": {
+            "type": "string"
+          },
+          "finding": {
+            "type": "string"
+          },
+          "recommendation": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "approval_recommendation": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}

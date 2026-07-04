@@ -80,10 +80,11 @@ org-governance/    Organization-level custom agent governance examples
 5. Read `docs/advanced-agentic-failure-modes.md`, `docs/context-window-gating.md`, and `docs/cost-and-retry-control.md` for deeper agentic failure patterns.
 6. Use `docs/workflow-validation-guide.md` and `docs/workflow-dry-run-checklist.md` to review workflow gates before trusting downstream agent execution.
 7. Read `docs/state-serializability.md` to understand workflow outputs and artifact names as multi-agent state contracts.
-8. Inspect the agent profiles under `.github/agents/` and note how tool access is scoped.
-9. Review MCP server examples under `mcp/`.
-10. Review workflow governance patterns under `.github/workflows/`.
-11. Complete the labs under `labs/` by reading the artifacts and explaining what is safe, risky, broken, or missing.
+8. Use `docs/lab-nuance-upgrade-playbook.md` and `docs/v0.5-lab-upgrade-plan.md` to understand the remaining lab upgrade quality bar.
+9. Inspect the agent profiles under `.github/agents/` and note how tool access is scoped.
+10. Review MCP server examples under `mcp/`.
+11. Review workflow governance patterns under `.github/workflows/`.
+12. Complete the labs under `labs/` by reading the artifacts and explaining what is safe, risky, broken, or missing.
 
 Use `labs/README.md` for the recommended lab order, difficulty levels, and answer-key guidance.
 

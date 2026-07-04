@@ -57,3 +57,5 @@ Use this pattern when moving from surface artifact inspection to production-grad
 Lab 01 now models this deeper review pattern for the remaining labs by treating agent profiles as prompt-and-capability control surfaces, not passive documentation.
 
 Lab 02 extends the pattern by treating workflow outputs and artifact names as serialized state contracts. It shows why downstream agents must receive deterministic, schema-valid state for the current run instead of guessing or using stale cache context.
+
+The v0.5 upgrade effort uses `docs/lab-nuance-upgrade-playbook.md` and `docs/v0.5-lab-upgrade-plan.md` as the quality bar for Labs 03-11.

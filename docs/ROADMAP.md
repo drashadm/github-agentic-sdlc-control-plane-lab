@@ -96,17 +96,17 @@ Focus:
 * fail-closed downstream gating
 * state serializability lab upgrade
 
-## v0.5 - More Realistic Logs and Failure Scenarios
+## v0.5 - Lab Nuance Deepening
 
-Status: Planned
+Status: In progress
 
 Focus:
 
-* Richer session logs
-* Ambiguous failures
-* Misleading success states
-* Stale context examples
-* Multi-agent conflict examples
+* upgrade Labs 03-11
+* apply Lab 01 and Lab 02 quality bar across remaining labs
+* deepen agentic failure-mode reasoning
+* keep one cumulative feature branch
+* preserve public-safe educational examples
 
 ## v1.0 - Public Showcase Version
 

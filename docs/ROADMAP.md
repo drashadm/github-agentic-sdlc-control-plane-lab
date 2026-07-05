@@ -118,6 +118,11 @@ Focus:
 * stale memory validation
 * belief vs authorization separation
 * memory quarantine before context injection
+* multi-agent coordination governance
+* semantic compression loss
+* dissent preservation
+* consolidation fidelity
+* deterministic global-status merge rules
 * keep one cumulative feature branch
 * preserve public-safe educational examples
 

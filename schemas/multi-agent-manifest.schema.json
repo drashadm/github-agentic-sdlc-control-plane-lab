@@ -1,0 +1,104 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "multi-agent-manifest.schema.json",
+  "title": "Multi-Agent Manifest Artifact",
+  "description": "Educational schema for multi-agent provenance, role boundaries, dissent, and conditional decision state.",
+  "type": "object",
+  "required": [
+    "artifact_type",
+    "version",
+    "manifest_id",
+    "run_id",
+    "branch",
+    "commit_sha",
+    "agents_involved",
+    "upstream_artifacts",
+    "agent_role_boundaries",
+    "independent_evidence_required",
+    "dissent_items",
+    "conditional_approvals",
+    "unresolved_findings",
+    "consolidation_rules",
+    "global_pipeline_status",
+    "safe_next_action"
+  ],
+  "properties": {
+    "artifact_type": {
+      "const": "multi_agent_manifest"
+    },
+    "version": {
+      "type": "string"
+    },
+    "manifest_id": {
+      "type": "string"
+    },
+    "run_id": {
+      "type": "string"
+    },
+    "branch": {
+      "type": "string"
+    },
+    "commit_sha": {
+      "type": "string",
+      "minLength": 7
+    },
+    "agents_involved": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "upstream_artifacts": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "agent_role_boundaries": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "independent_evidence_required": {
+      "type": "boolean"
+    },
+    "dissent_items": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "conditional_approvals": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "unresolved_findings": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "consolidation_rules": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "global_pipeline_status": {
+      "enum": [
+        "approved",
+        "review_required",
+        "human_escalation_required",
+        "blocked"
+      ]
+    },
+    "safe_next_action": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "additionalProperties": true
+}

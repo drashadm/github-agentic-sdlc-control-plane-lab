@@ -22,7 +22,7 @@ Advanced labs focus on agent-specific risks that may not appear in normal CI/CD 
 | Lab 04 | Analyze a Session Log | Intermediate | Resumed session continuity, temporal drift, stale state, and false continuity risk |
 | Lab 05 | Hook Permission Decision | Intermediate | Hook enforcement, semantic intent mediation, approval-to-payload binding, and fail-closed guardrails |
 | Lab 06 | Memory Drift | Intermediate | Memory as non-authoritative state, stale fact validation, belief/authorization separation, and memory quarantine |
-| Lab 07 | Multi-Agent Handoff | Advanced | Cross-artifact consolidation review |
+| Lab 07 | Multi-Agent Handoff | Advanced | Multi-agent coordination, semantic compression loss, dissent preservation, and consolidation fidelity |
 | Lab 08 | Reviewer Note Leakage | Beginner / Intermediate | Final artifact cleanup and publish readiness |
 | Lab 09 | Schema Validation Failure | Intermediate | Schema-aware artifact governance |
 | Lab 10 | GitHub Actions Artifact Handoff Drill | Intermediate | Workflow dependency and evidence gating |
@@ -65,5 +65,7 @@ Lab 04 extends the pattern by treating resumed sessions as continuity claims tha
 Lab 05 extends the pattern by treating hooks as runtime enforcement points between model intent and tool execution. It shows why semantic intent checks, payload-bound approvals, protected hook files, and fail-closed decisions are stronger than advisory logs.
 
 Lab 06 extends the pattern by treating memory as an untrusted cache rather than runtime authority. It shows why stale, unpinned, or authority-conflicting memory must be quarantined before it enters an agent context window.
+
+Lab 07 extends the pattern by treating final reports as high-fidelity governance artifacts. It shows why dissent, conditional approvals, provenance, and deterministic global-status rules must survive consolidation.
 
 The v0.5 upgrade effort uses `docs/lab-nuance-upgrade-playbook.md` and `docs/v0.5-lab-upgrade-plan.md` as the quality bar for Labs 03-11.

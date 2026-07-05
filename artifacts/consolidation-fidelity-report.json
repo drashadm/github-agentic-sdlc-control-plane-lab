@@ -1,0 +1,48 @@
+{
+  "artifact_type": "consolidation_fidelity_report",
+  "version": "1.0",
+  "report_id": "consolidation_fidelity_mock_2026_07_24_001",
+  "run_id": "run_mock_2026_07_24_multi_agent_001",
+  "branch": "feature/agent-lab-v1",
+  "commit_sha": "cccccccc11111111dddddddd22222222eeeeeeee",
+  "upstream_artifacts_checked": [
+    "artifacts/planner-output.json",
+    "artifacts/builder-diff-summary.json",
+    "artifacts/reviewer-findings.json",
+    "artifacts/security-audit-report.json",
+    "artifacts/consolidated-operator-report.json"
+  ],
+  "findings_preserved": [
+    "Examples should not be mistaken for production-safe configuration."
+  ],
+  "findings_omitted": [
+    {
+      "source_artifact": "artifacts/reviewer-findings.json",
+      "omitted_finding": "Risky MCP wildcard example must remain clearly labeled as unsafe."
+    }
+  ],
+  "conditional_language_preserved": false,
+  "dissent_preserved": false,
+  "risk_downgrades_detected": [
+    {
+      "source_artifact": "artifacts/reviewer-findings.json",
+      "original_language": "approve_after_security_review",
+      "compressed_language": "ready_for_manual_review"
+    },
+    {
+      "source_artifact": "artifacts/security-audit-report.json",
+      "original_language": "required_human_approval",
+      "compressed_language": "mild warnings"
+    }
+  ],
+  "schema_presence_only_checks": [
+    "Workflow checks that required JSON files exist but does not prove semantic preservation."
+  ],
+  "semantic_fidelity_status": "review_required",
+  "blocking_findings": [
+    "Conditional approval language was not fully preserved.",
+    "Reviewer finding was omitted from the final report.",
+    "Security approval requirements risk being downgraded during summary."
+  ],
+  "safe_next_action": "Block final approval until the consolidated report preserves conditional findings, dissent, and provenance metadata."
+}

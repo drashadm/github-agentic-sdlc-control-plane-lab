@@ -26,5 +26,7 @@ Schema validation does not prove an agent was correct. It proves the artifact is
 | `memory/memory-vector-index.lock.json` | N/A | Preserves mocked memory index freshness evidence and whether long-term memory matches current repository head. |
 | `artifacts/memory-validation-report.json` | `schemas/memory-validation-report.schema.json` | Preserves evidence that memory facts were source-checked, freshness-checked, allowed, or quarantined before context injection. |
 | `artifacts/memory-authority-review-report.json` | `schemas/memory-authority-review-report.schema.json` | Preserves evidence separating agent belief from runtime authorization. |
+| `artifacts/multi-agent-manifest.json` | `schemas/multi-agent-manifest.schema.json` | Preserves multi-agent provenance, role boundaries, dissent, conditional approvals, and deterministic global-status state. |
+| `artifacts/consolidation-fidelity-report.json` | `schemas/consolidation-fidelity-report.schema.json` | Preserves evidence that final consolidation retained upstream findings, dissent, conditional risk, and semantic fidelity. |
 | `artifacts/planner-state-manifest.json` | `schemas/planner-state-manifest.schema.json` | Teaches state serializability and deterministic planner-to-builder handoffs. |
 | `artifacts/stale-agent-state-cache-example.json` | `schemas/stale-agent-state-cache-example.schema.json` | Demonstrates stale context risk when downstream agents fall back to previous-run state. |

@@ -1,0 +1,101 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "consolidation-fidelity-report.schema.json",
+  "title": "Consolidation Fidelity Report Artifact",
+  "description": "Educational schema for checking whether final consolidation preserved upstream meaning and risk.",
+  "type": "object",
+  "required": [
+    "artifact_type",
+    "version",
+    "report_id",
+    "run_id",
+    "branch",
+    "commit_sha",
+    "upstream_artifacts_checked",
+    "findings_preserved",
+    "findings_omitted",
+    "conditional_language_preserved",
+    "dissent_preserved",
+    "risk_downgrades_detected",
+    "schema_presence_only_checks",
+    "semantic_fidelity_status",
+    "blocking_findings",
+    "safe_next_action"
+  ],
+  "properties": {
+    "artifact_type": {
+      "const": "consolidation_fidelity_report"
+    },
+    "version": {
+      "type": "string"
+    },
+    "report_id": {
+      "type": "string"
+    },
+    "run_id": {
+      "type": "string"
+    },
+    "branch": {
+      "type": "string"
+    },
+    "commit_sha": {
+      "type": "string",
+      "minLength": 7
+    },
+    "upstream_artifacts_checked": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "findings_preserved": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "findings_omitted": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "conditional_language_preserved": {
+      "type": "boolean"
+    },
+    "dissent_preserved": {
+      "type": "boolean"
+    },
+    "risk_downgrades_detected": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "schema_presence_only_checks": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "semantic_fidelity_status": {
+      "enum": [
+        "valid",
+        "review_required",
+        "invalid",
+        "blocked"
+      ]
+    },
+    "blocking_findings": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "safe_next_action": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "additionalProperties": true
+}

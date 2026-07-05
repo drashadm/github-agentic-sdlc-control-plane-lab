@@ -127,6 +127,10 @@ Focus:
 * reviewer note leakage
 * draft/final boundary protection
 * public artifact promotion gates
+* schema versus semantic validation
+* schema-compliant confabulation
+* semantic null detection
+* cross-artifact consistency checks
 * keep one cumulative feature branch
 * preserve public-safe educational examples
 

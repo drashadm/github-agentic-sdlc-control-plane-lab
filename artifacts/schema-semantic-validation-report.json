@@ -1,0 +1,66 @@
+{
+  "artifact_type": "schema_semantic_validation_report",
+  "version": "1.0",
+  "report_id": "schema_semantic_validation_mock_2026_07_24_001",
+  "run_id": "run_mock_2026_07_24_schema_001",
+  "branch": "feature/agent-lab-v1",
+  "commit_sha": "eeeeeeee11111111ffffffff22222222aaaaaaaa",
+  "artifacts_checked": [
+    "artifacts/planner-output.json",
+    "artifacts/reviewer-findings.json",
+    "artifacts/consolidated-operator-report.json"
+  ],
+  "schemas_checked": [
+    "schemas/planner-output.schema.json",
+    "schemas/reviewer-findings.schema.json",
+    "schemas/consolidated-operator-report.schema.json"
+  ],
+  "structural_validation_status": "passed",
+  "semantic_validation_status": "review_required",
+  "semantic_nulls_detected": [
+    {
+      "artifact": "artifacts/consolidated-operator-report.json",
+      "field": "unresolved_risks",
+      "observed_value": "None",
+      "reason": "A placeholder-style no-risk value conflicts with upstream risk evidence."
+    }
+  ],
+  "generic_filler_detected": [
+    {
+      "artifact": "artifacts/planner-output.json",
+      "field": "success_criteria",
+      "observed_value": "Make sure it works",
+      "reason": "The field is structurally valid but not specific enough for review or automation."
+    }
+  ],
+  "type_coercion_findings": [
+    {
+      "artifact": "artifacts/consolidated-operator-report.json",
+      "field": "safe_next_action",
+      "observed_value": "Looks good",
+      "reason": "A complex review decision was compressed into a generic string."
+    }
+  ],
+  "schema_induced_omissions": [
+    {
+      "artifact": "artifacts/consolidated-operator-report.json",
+      "omitted_detail": "Conditional approval from the upstream review was not preserved in the final decision field."
+    }
+  ],
+  "cross_artifact_conflicts": [
+    {
+      "source_artifact": "artifacts/reviewer-findings.json",
+      "final_artifact": "artifacts/consolidated-operator-report.json",
+      "conflict": "Upstream unresolved risk was not preserved in the consolidated report."
+    }
+  ],
+  "downstream_trust_risks": [
+    "A downstream agent may treat schema-valid generic filler as verified engineering evidence.",
+    "A final report may be treated as decision-ready even though upstream risk language was compressed."
+  ],
+  "blocking_findings": [
+    "Structural validation passed, but semantic validation requires review.",
+    "Cross-artifact consistency checks found unresolved risk that was not preserved."
+  ],
+  "safe_next_action": "Block downstream automation until semantic specificity, provenance, and cross-artifact consistency checks pass."
+}

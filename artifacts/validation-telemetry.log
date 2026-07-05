@@ -1,0 +1,7 @@
+2026-07-24T10:15:00Z run_id=run_mock_2026_07_24_schema_001 event=json_parse artifact=artifacts/planner-output.json status=passed
+2026-07-24T10:15:01Z run_id=run_mock_2026_07_24_schema_001 event=json_schema_required_fields artifact=artifacts/planner-output.json schema=schemas/planner-output.schema.json status=passed
+2026-07-24T10:15:02Z run_id=run_mock_2026_07_24_schema_001 event=field_shape_check field=success_criteria expected_type=array status=passed
+2026-07-24T10:15:03Z run_id=run_mock_2026_07_24_schema_001 event=semantic_specificity_check field=success_criteria status=review_required finding="generic filler such as Make sure it works is not actionable evidence"
+2026-07-24T10:15:04Z run_id=run_mock_2026_07_24_schema_001 event=semantic_null_check artifact=artifacts/consolidated-operator-report.json field=unresolved_risks status=review_required finding="placeholder-style None conflicts with upstream unresolved risk"
+2026-07-24T10:15:05Z run_id=run_mock_2026_07_24_schema_001 event=cross_artifact_check source=artifacts/reviewer-findings.json final=artifacts/consolidated-operator-report.json status=blocked finding="upstream risk not preserved in final report"
+2026-07-24T10:15:06Z run_id=run_mock_2026_07_24_schema_001 event=final_gate status=blocked action="block downstream execution until semantic and cross-artifact checks pass"

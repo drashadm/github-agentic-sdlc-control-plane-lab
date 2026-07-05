@@ -1,0 +1,47 @@
+{
+  "artifact_type": "compound_handoff_failure_report",
+  "version": "1.0",
+  "report_id": "compound_handoff_mock_2026_07_24_001",
+  "run_id": "run_mock_2026_07_24_capstone_001",
+  "branch": "feature/agent-lab-v1",
+  "commit_sha": "aaaaaaaa11111111bbbbbbbb22222222cccccccc",
+  "failed_trust_chain_layers": [
+    "schema_contract",
+    "semantic_validation",
+    "memory_freshness",
+    "artifact_provenance",
+    "retry_budget",
+    "consolidator_fidelity",
+    "human_approval_evidence"
+  ],
+  "schema_drift_findings": [
+    "Drifted fields target_files and code_changes replaced expected output_files and handoff_summary."
+  ],
+  "semantic_void_findings": [
+    "Downstream agent processed zero expected files while reporting success."
+  ],
+  "unexpected_field_findings": [
+    "Unexpected upstream keys must be quarantined and not injected into downstream prompts."
+  ],
+  "memory_drift_findings": [
+    "Stored context must be revalidated before being used to bridge missing handoff state."
+  ],
+  "artifact_provenance_findings": [
+    "Artifact provenance requires run, branch, commit, producing job, producing agent, and fake digest evidence."
+  ],
+  "mcp_authority_findings": [
+    "No tool authority should expand to compensate for failed handoff state."
+  ],
+  "hook_enforcement_findings": [
+    "High-risk continuation should be blocked before execution when validation evidence is incomplete."
+  ],
+  "retry_budget_findings": [
+    "Retries exceeded the educational retry budget without semantic progress."
+  ],
+  "consolidator_fidelity_findings": [
+    "Final report must preserve the zero-work failure and blocked semantic state."
+  ],
+  "human_approval_risk": "Human approval based on a polished but incomplete report is unsafe.",
+  "global_decision": "human_escalation_required",
+  "safe_next_action": "Block the chain, preserve evidence, reset from known-good handoff state, and require human escalation before continuation."
+}

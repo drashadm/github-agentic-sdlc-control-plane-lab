@@ -26,7 +26,7 @@ Advanced labs focus on agent-specific risks that may not appear in normal CI/CD 
 | Lab 08 | Reviewer Note Leakage | Intermediate | Reviewer note leakage, scratchpad separation, strict output serialization, and publication readiness gates |
 | Lab 09 | Schema Validation Failure | Intermediate | Schema-compliant confabulation, semantic nulls, content integrity, and cross-artifact consistency checks |
 | Lab 10 | GitHub Actions Artifact Handoff Drill | Intermediate | Workflow success versus agentic success, artifact transaction readiness, provenance-bound handoffs, and fail-closed downstream gates |
-| Lab 11 | Advanced Agent Handoff Failure | Advanced | Schema drift, context-window governance, and silent failure prevention |
+| Lab 11 | Advanced Agent Handoff Failure | Advanced | Zombie Pipeline detection, compound chain-of-trust failure, token budget accountability, semantic progress checks, and fail-closed capstone review |
 
 ## How to Use the Answer Keys
 
@@ -73,5 +73,7 @@ Lab 08 extends the pattern by treating final documentation as promoted output, n
 Lab 09 extends the pattern by treating schema validation as the first gate rather than the final decision. It shows why schema-valid artifacts can still contain generic filler, semantic nulls, stale decisions, omitted caveats, or cross-artifact conflicts that should block downstream automation.
 
 Lab 10 extends the pattern by treating green workflow status as runner evidence, not proof of a valid agent handoff. It shows why artifact transaction readiness, provenance-bound consumption, record counts, and fail-closed downstream gates must prove the next agent received current and complete state.
+
+Lab 11 completes the v0.5 pattern as a capstone chain-of-trust review. It shows how schema drift, semantic voids, stale memory, malformed artifacts, retry budget exhaustion, context bloat, tool and hook boundaries, and final-report overconfidence can combine into one Zombie Pipeline failure.
 
 The v0.5 upgrade effort uses `docs/lab-nuance-upgrade-playbook.md` and `docs/v0.5-lab-upgrade-plan.md` as the quality bar for Labs 03-11.

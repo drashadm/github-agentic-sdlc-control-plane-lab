@@ -1,0 +1,86 @@
+{
+  "artifact_type": "billing_and_token_telemetry",
+  "version": "1.0",
+  "telemetry_id": "billing_token_mock_2026_07_24_001",
+  "run_id": "run_mock_2026_07_24_capstone_001",
+  "branch": "feature/agent-lab-v1",
+  "commit_sha": "aaaaaaaa11111111bbbbbbbb22222222cccccccc",
+  "workflow_name": "Advanced Agent Handoff Review",
+  "agent_chain": [
+    "Planner Agent",
+    "Builder Agent",
+    "Consolidator Agent"
+  ],
+  "budget_policy": {
+    "max_retry_attempts": 3,
+    "max_tokens_per_run": 6000,
+    "max_estimated_cost_units": 30
+  },
+  "retry_attempts": 4,
+  "token_usage_by_attempt": [
+    {
+      "attempt": 1,
+      "input_tokens": 900,
+      "output_tokens": 300,
+      "semantic_progress": "none"
+    },
+    {
+      "attempt": 2,
+      "input_tokens": 1400,
+      "output_tokens": 360,
+      "semantic_progress": "none"
+    },
+    {
+      "attempt": 3,
+      "input_tokens": 2100,
+      "output_tokens": 420,
+      "semantic_progress": "none"
+    },
+    {
+      "attempt": 4,
+      "input_tokens": 3000,
+      "output_tokens": 500,
+      "semantic_progress": "none"
+    }
+  ],
+  "estimated_cost_by_attempt": [
+    {
+      "attempt": 1,
+      "estimated_cost_units": 5
+    },
+    {
+      "attempt": 2,
+      "estimated_cost_units": 8
+    },
+    {
+      "attempt": 3,
+      "estimated_cost_units": 12
+    },
+    {
+      "attempt": 4,
+      "estimated_cost_units": 17
+    }
+  ],
+  "context_window_growth": [
+    {
+      "attempt": 1,
+      "estimated_context_tokens": 1200
+    },
+    {
+      "attempt": 4,
+      "estimated_context_tokens": 3500
+    }
+  ],
+  "stop_conditions": [
+    "Stop after max_retry_attempts.",
+    "Stop when semantic_progress remains none.",
+    "Stop when max_estimated_cost_units is exceeded."
+  ],
+  "budget_status": "blocked",
+  "anomaly_detected": true,
+  "blocking_findings": [
+    "Retry attempts exceeded the configured educational limit.",
+    "Token usage grew while semantic progress remained zero."
+  ],
+  "safe_next_action": "Stop the agent chain and require human review before any further regeneration attempt."
+}

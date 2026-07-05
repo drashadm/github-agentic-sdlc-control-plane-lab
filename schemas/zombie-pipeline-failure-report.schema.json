@@ -1,0 +1,129 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "zombie-pipeline-failure-report.schema.json",
+  "title": "Zombie Pipeline Failure Report Artifact",
+  "description": "Educational schema for detecting workflow success after agentic state collapse.",
+  "type": "object",
+  "required": [
+    "artifact_type",
+    "version",
+    "report_id",
+    "run_id",
+    "branch",
+    "commit_sha",
+    "visible_pipeline_status",
+    "agentic_state_status",
+    "processed_items_expected",
+    "processed_items_actual",
+    "exit_codes",
+    "schema_status",
+    "semantic_status",
+    "artifact_provenance_status",
+    "retry_loop_status",
+    "final_report_status",
+    "zombie_pipeline_detected",
+    "blocking_findings",
+    "safe_next_action"
+  ],
+  "properties": {
+    "artifact_type": {
+      "const": "zombie_pipeline_failure_report"
+    },
+    "version": {
+      "type": "string"
+    },
+    "report_id": {
+      "type": "string"
+    },
+    "run_id": {
+      "type": "string"
+    },
+    "branch": {
+      "type": "string"
+    },
+    "commit_sha": {
+      "type": "string",
+      "minLength": 7
+    },
+    "visible_pipeline_status": {
+      "enum": [
+        "success",
+        "failure",
+        "cancelled",
+        "skipped",
+        "unknown"
+      ]
+    },
+    "agentic_state_status": {
+      "enum": [
+        "valid",
+        "degraded",
+        "collapsed",
+        "unknown"
+      ]
+    },
+    "processed_items_expected": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "processed_items_actual": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "exit_codes": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "schema_status": {
+      "type": "string"
+    },
+    "semantic_status": {
+      "enum": [
+        "valid",
+        "review_required",
+        "invalid",
+        "blocked"
+      ]
+    },
+    "artifact_provenance_status": {
+      "enum": [
+        "valid",
+        "review_required",
+        "invalid",
+        "blocked"
+      ]
+    },
+    "retry_loop_status": {
+      "enum": [
+        "within_limit",
+        "review_required",
+        "exceeded",
+        "blocked"
+      ]
+    },
+    "final_report_status": {
+      "enum": [
+        "valid",
+        "review_required",
+        "invalid",
+        "blocked"
+      ]
+    },
+    "zombie_pipeline_detected": {
+      "type": "boolean"
+    },
+    "blocking_findings": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "safe_next_action": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "additionalProperties": true
+}

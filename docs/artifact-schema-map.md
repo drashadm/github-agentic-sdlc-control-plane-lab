@@ -42,3 +42,9 @@ Schema validation does not prove an agent was correct. It proves the artifact is
 | `schemas/artifact-transaction-report.schema.json` | N/A | Defines the educational contract for artifact completeness and transaction-readiness reports. |
 | `artifacts/artifact-provenance-manifest.json` | `schemas/artifact-provenance-manifest.schema.json` | Preserves provenance-bound downstream consumption evidence for run, branch, commit, workflow, job, producing agent, artifact name, and fake digest. |
 | `schemas/artifact-provenance-manifest.schema.json` | N/A | Defines the educational contract for provenance manifests used in agent handoff review. |
+| `artifacts/billing-and-token-telemetry.json` | `schemas/billing-and-token-telemetry.schema.json` | Preserves fake retry, token, cost, context-growth, and stop-condition evidence for silent failure loops. |
+| `schemas/billing-and-token-telemetry.schema.json` | N/A | Defines the educational contract for retry and token budget accountability artifacts. |
+| `artifacts/zombie-pipeline-failure-report.json` | `schemas/zombie-pipeline-failure-report.schema.json` | Preserves evidence that visible pipeline success hid collapsed agentic state and zero-work processing. |
+| `schemas/zombie-pipeline-failure-report.schema.json` | N/A | Defines the educational contract for Zombie Pipeline detection reports. |
+| `artifacts/compound-handoff-failure-report.json` | `schemas/compound-handoff-failure-report.schema.json` | Preserves capstone chain-of-trust review evidence across schema, semantic, memory, artifact, tool, hook, retry, consolidation, and human approval layers. |
+| `schemas/compound-handoff-failure-report.schema.json` | N/A | Defines the educational contract for compound handoff failure reports. |

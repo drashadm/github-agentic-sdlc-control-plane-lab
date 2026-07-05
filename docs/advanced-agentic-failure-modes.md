@@ -82,3 +82,11 @@ Useful provenance fields include:
 - timestamp
 - checksum or attestation
 - reviewer approval
+
+## Zombie Pipeline
+
+A Zombie Pipeline is a workflow that continues executing and reporting success after the agentic state chain has collapsed. Visible pipeline health can hide agentic failure when runner steps pass, JSON parses, schemas validate, and final reports render while downstream agents processed zero meaningful items.
+
+Zero-work success is dangerous when work was expected. A schema-valid artifact can still be semantically void, downstream agents can amplify the failure by guessing or retrying, and final reports can turn missing state into polished false confidence.
+
+The safe response is to fail closed on zero processed items, semantic validation failure, stale provenance, retry budget exhaustion, or lost blocking findings.

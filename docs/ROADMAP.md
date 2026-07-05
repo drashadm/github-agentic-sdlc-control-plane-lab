@@ -135,6 +135,11 @@ Focus:
 * artifact transaction governance
 * provenance-bound artifact handoffs
 * fail-closed downstream consumption gates
+* Zombie Pipeline detection
+* compound handoff failure review
+* token and retry budget accountability
+* semantic progress assertions
+* chain-of-trust review across state, schema, memory, artifacts, tools, hooks, and human approval
 * keep one cumulative feature branch
 * preserve public-safe educational examples
 

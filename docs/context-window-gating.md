@@ -16,3 +16,9 @@ Context compression can hide risk if it is not traceable. Any compressed summary
 * Does the summary link back to source evidence?
 * Are unresolved risks preserved?
 * Is the artifact safe to pass to a downstream agent?
+
+## Context Growth During Failure Loops
+
+Failed attempts can increase context size when agents add logs, artifacts, summaries, prior failures, and stale assumptions to each retry. More context does not necessarily mean better grounding; it can worsen drift when the added material is stale or polluted.
+
+Context-window gates should block bloated reruns, reject repeated failure traces that crowd out source evidence, and stop agents from retrying indefinitely with increasingly stale context.

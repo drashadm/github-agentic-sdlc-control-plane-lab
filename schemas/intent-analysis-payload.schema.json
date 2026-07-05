@@ -1,0 +1,96 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "intent-analysis-payload.schema.json",
+  "title": "Intent Analysis Payload Artifact",
+  "description": "Educational schema for pre-tool semantic intent mediation evidence.",
+  "type": "object",
+  "required": [
+    "artifact_type",
+    "version",
+    "session_id",
+    "run_id",
+    "branch",
+    "commit_sha",
+    "requested_tool",
+    "raw_request_summary",
+    "interpreted_capability",
+    "target_resource_type",
+    "target_resource_scope",
+    "risk_level",
+    "matched_policy_rules",
+    "decision",
+    "decision_reason",
+    "requires_human_approval",
+    "safe_next_action"
+  ],
+  "properties": {
+    "artifact_type": {
+      "const": "intent_analysis_payload"
+    },
+    "version": {
+      "type": "string"
+    },
+    "session_id": {
+      "type": "string"
+    },
+    "run_id": {
+      "type": "string"
+    },
+    "branch": {
+      "type": "string"
+    },
+    "commit_sha": {
+      "type": "string",
+      "minLength": 7
+    },
+    "requested_tool": {
+      "type": "string"
+    },
+    "raw_request_summary": {
+      "type": "string"
+    },
+    "interpreted_capability": {
+      "type": "string"
+    },
+    "target_resource_type": {
+      "type": "string"
+    },
+    "target_resource_scope": {
+      "type": "string"
+    },
+    "risk_level": {
+      "enum": [
+        "low",
+        "medium",
+        "high",
+        "critical"
+      ]
+    },
+    "matched_policy_rules": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "decision": {
+      "enum": [
+        "allow",
+        "deny",
+        "rewrite",
+        "escalate",
+        "blocked"
+      ]
+    },
+    "decision_reason": {
+      "type": "string"
+    },
+    "requires_human_approval": {
+      "type": "boolean"
+    },
+    "safe_next_action": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "additionalProperties": true
+}

@@ -5,7 +5,7 @@
   "cwd": "/workspaces/github-agentic-sdlc-control-plane-lab",
   "toolName": "execute",
   "toolArgs": {
-    "command": "rm -rf artifacts/"
+    "command": "[blocked destructive command]"
   },
   "policy": {
     "rule": "deny-destructive-execute-without-human-approval",

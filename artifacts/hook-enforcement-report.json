@@ -1,0 +1,52 @@
+{
+  "artifact_type": "hook_enforcement_report",
+  "version": "1.0",
+  "hook_events_reviewed": [
+    ".github/hooks/preToolUse-deny-execute.example.json",
+    ".github/hooks/preToolUse-rewrite-args.example.json",
+    ".github/hooks/postToolUse-add-context.example.json",
+    ".github/hooks/permissionRequest-cli-only.example.json"
+  ],
+  "blocked_tool_calls": [
+    {
+      "event": "preToolUse",
+      "tool": "execute",
+      "operation_summary": "[blocked file deletion intent]",
+      "decision": "deny",
+      "reason": "High-risk capability lacked payload-bound human approval."
+    }
+  ],
+  "allowed_tool_calls": [],
+  "rewritten_tool_calls": [
+    {
+      "event": "preToolUse",
+      "tool": "search",
+      "original_summary": "broad repository search request",
+      "rewritten_summary": "task-scoped governance search request",
+      "decision": "rewrite"
+    }
+  ],
+  "advisory_events": [
+    {
+      "event": "permissionRequest",
+      "scope": "CLI-only-example",
+      "risk": "CLI-local permission request should not be treated as cloud-agent enforcement."
+    }
+  ],
+  "enforcement_failures": [],
+  "bypass_risks": [
+    "Hook files or runner policies changed without required review could weaken the guardrail.",
+    "An alternate workflow path could invoke tools without passing through the same preToolUse policy."
+  ],
+  "protected_files_checked": [
+    ".github/hooks/**",
+    ".github/workflows/agent-runner-educational.yml",
+    ".github/agents/**"
+  ],
+  "audit_evidence": [
+    "preToolUse denial occurred before execution.",
+    "Rewrite decision preserved original and rewritten intent summary.",
+    "Post-tool context event is advisory evidence only."
+  ],
+  "safe_next_action": "Block privileged execution if pre-tool enforcement, protected hook files, and bypass-path review cannot be proven."
+}

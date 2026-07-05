@@ -109,6 +109,11 @@ Focus:
 * temporal drift
 * stale state validation
 * session logs as governance evidence
+* hook enforcement
+* semantic intent mediation
+* approval-to-payload binding
+* advisory vs deterministic guardrails
+* fail-closed tool mediation
 * keep one cumulative feature branch
 * preserve public-safe educational examples
 

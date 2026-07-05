@@ -81,12 +81,13 @@ org-governance/    Organization-level custom agent governance examples
 6. Use `docs/workflow-validation-guide.md` and `docs/workflow-dry-run-checklist.md` to review workflow gates before trusting downstream agent execution.
 7. Read `docs/state-serializability.md` to understand workflow outputs and artifact names as multi-agent state contracts.
 8. Read `docs/session-continuity-governance.md` to understand resumed session and stale-state review.
-9. Read `docs/mcp-tool-boundary-governance.md` before reviewing MCP server examples.
-10. Use `docs/lab-nuance-upgrade-playbook.md` and `docs/v0.5-lab-upgrade-plan.md` to understand the remaining lab upgrade quality bar.
-11. Inspect the agent profiles under `.github/agents/` and note how tool access is scoped.
-12. Review MCP server examples under `mcp/`.
-13. Review workflow governance patterns under `.github/workflows/`.
-14. Complete the labs under `labs/` by reading the artifacts and explaining what is safe, risky, broken, or missing.
+9. Read `docs/hook-enforcement-governance.md` to understand pre-tool guardrails and approval binding.
+10. Read `docs/mcp-tool-boundary-governance.md` before reviewing MCP server examples.
+11. Use `docs/lab-nuance-upgrade-playbook.md` and `docs/v0.5-lab-upgrade-plan.md` to understand the remaining lab upgrade quality bar.
+12. Inspect the agent profiles under `.github/agents/` and note how tool access is scoped.
+13. Review MCP server examples under `mcp/`.
+14. Review workflow governance patterns under `.github/workflows/`.
+15. Complete the labs under `labs/` by reading the artifacts and explaining what is safe, risky, broken, or missing.
 
 Use `labs/README.md` for the recommended lab order, difficulty levels, and answer-key guidance.
 

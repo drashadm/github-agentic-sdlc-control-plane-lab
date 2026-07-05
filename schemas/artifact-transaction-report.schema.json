@@ -1,0 +1,138 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "artifact-transaction-report.schema.json",
+  "title": "Artifact Transaction Report Artifact",
+  "description": "Educational schema for checking handoff artifact completeness and transaction readiness.",
+  "type": "object",
+  "required": [
+    "artifact_type",
+    "version",
+    "report_id",
+    "run_id",
+    "branch",
+    "commit_sha",
+    "artifact_under_review",
+    "producing_job",
+    "consuming_job",
+    "file_exists",
+    "file_size_bytes",
+    "parse_status",
+    "schema_validation_status",
+    "semantic_validation_status",
+    "expected_record_count",
+    "actual_record_count",
+    "content_digest",
+    "digest_algorithm",
+    "atomic_write_status",
+    "upload_gate_status",
+    "downstream_gate_status",
+    "blocking_findings",
+    "safe_next_action"
+  ],
+  "properties": {
+    "artifact_type": {
+      "const": "artifact_transaction_report"
+    },
+    "version": {
+      "type": "string"
+    },
+    "report_id": {
+      "type": "string"
+    },
+    "run_id": {
+      "type": "string"
+    },
+    "branch": {
+      "type": "string"
+    },
+    "commit_sha": {
+      "type": "string",
+      "minLength": 7
+    },
+    "artifact_under_review": {
+      "type": "string"
+    },
+    "producing_job": {
+      "type": "string"
+    },
+    "consuming_job": {
+      "type": "string"
+    },
+    "file_exists": {
+      "type": "boolean"
+    },
+    "file_size_bytes": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "parse_status": {
+      "enum": [
+        "passed",
+        "failed",
+        "not_run"
+      ]
+    },
+    "schema_validation_status": {
+      "enum": [
+        "passed",
+        "failed",
+        "not_run"
+      ]
+    },
+    "semantic_validation_status": {
+      "enum": [
+        "valid",
+        "review_required",
+        "invalid",
+        "blocked",
+        "not_run"
+      ]
+    },
+    "expected_record_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "actual_record_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "content_digest": {
+      "type": "string"
+    },
+    "digest_algorithm": {
+      "type": "string"
+    },
+    "atomic_write_status": {
+      "enum": [
+        "complete",
+        "incomplete",
+        "unknown"
+      ]
+    },
+    "upload_gate_status": {
+      "enum": [
+        "approved",
+        "review_required",
+        "blocked"
+      ]
+    },
+    "downstream_gate_status": {
+      "enum": [
+        "approved",
+        "review_required",
+        "blocked"
+      ]
+    },
+    "blocking_findings": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "safe_next_action": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "additionalProperties": true
+}

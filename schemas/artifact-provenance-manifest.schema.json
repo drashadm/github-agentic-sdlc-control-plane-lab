@@ -1,0 +1,112 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "artifact-provenance-manifest.schema.json",
+  "title": "Artifact Provenance Manifest Artifact",
+  "description": "Educational schema for binding consumed artifacts to a run, branch, commit, workflow, job, and producing agent.",
+  "type": "object",
+  "required": [
+    "artifact_type",
+    "version",
+    "manifest_id",
+    "run_id",
+    "run_attempt",
+    "branch",
+    "commit_sha",
+    "workflow_name",
+    "producing_job",
+    "consuming_job",
+    "producing_agent",
+    "artifact_name",
+    "artifact_digest",
+    "digest_algorithm",
+    "uploaded_at",
+    "consumed_at",
+    "artifact_retention_days",
+    "name_collision_risk",
+    "stale_artifact_risk",
+    "provenance_status",
+    "blocking_findings",
+    "safe_next_action"
+  ],
+  "properties": {
+    "artifact_type": {
+      "const": "artifact_provenance_manifest"
+    },
+    "version": {
+      "type": "string"
+    },
+    "manifest_id": {
+      "type": "string"
+    },
+    "run_id": {
+      "type": "string"
+    },
+    "run_attempt": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "branch": {
+      "type": "string"
+    },
+    "commit_sha": {
+      "type": "string",
+      "minLength": 7
+    },
+    "workflow_name": {
+      "type": "string"
+    },
+    "producing_job": {
+      "type": "string"
+    },
+    "consuming_job": {
+      "type": "string"
+    },
+    "producing_agent": {
+      "type": "string"
+    },
+    "artifact_name": {
+      "type": "string"
+    },
+    "artifact_digest": {
+      "type": "string"
+    },
+    "digest_algorithm": {
+      "type": "string"
+    },
+    "uploaded_at": {
+      "type": "string"
+    },
+    "consumed_at": {
+      "type": "string"
+    },
+    "artifact_retention_days": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "name_collision_risk": {
+      "type": "boolean"
+    },
+    "stale_artifact_risk": {
+      "type": "boolean"
+    },
+    "provenance_status": {
+      "enum": [
+        "valid",
+        "review_required",
+        "invalid",
+        "blocked"
+      ]
+    },
+    "blocking_findings": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "safe_next_action": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "additionalProperties": true
+}

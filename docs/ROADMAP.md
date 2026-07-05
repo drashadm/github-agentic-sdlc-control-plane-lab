@@ -131,6 +131,10 @@ Focus:
 * schema-compliant confabulation
 * semantic null detection
 * cross-artifact consistency checks
+* workflow success versus agentic success
+* artifact transaction governance
+* provenance-bound artifact handoffs
+* fail-closed downstream consumption gates
 * keep one cumulative feature branch
 * preserve public-safe educational examples
 

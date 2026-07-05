@@ -1,0 +1,119 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "pipeline-execution-checkpoint.schema.json",
+  "title": "Pipeline Execution Checkpoint Artifact",
+  "description": "Educational schema for comparing GitHub Actions runner state with internal agent runtime state.",
+  "type": "object",
+  "required": [
+    "artifact_type",
+    "version",
+    "checkpoint_id",
+    "run_id",
+    "branch",
+    "commit_sha",
+    "workflow_name",
+    "job_name",
+    "producing_agent",
+    "runner_step_status",
+    "agent_runtime_status",
+    "background_tasks_status",
+    "expected_outputs",
+    "output_files",
+    "file_write_status",
+    "upload_ready",
+    "checkpoint_status",
+    "blocking_findings",
+    "safe_next_action"
+  ],
+  "properties": {
+    "artifact_type": {
+      "const": "pipeline_execution_checkpoint"
+    },
+    "version": {
+      "type": "string"
+    },
+    "checkpoint_id": {
+      "type": "string"
+    },
+    "run_id": {
+      "type": "string"
+    },
+    "branch": {
+      "type": "string"
+    },
+    "commit_sha": {
+      "type": "string",
+      "minLength": 7
+    },
+    "workflow_name": {
+      "type": "string"
+    },
+    "job_name": {
+      "type": "string"
+    },
+    "producing_agent": {
+      "type": "string"
+    },
+    "runner_step_status": {
+      "enum": [
+        "success",
+        "failure",
+        "cancelled",
+        "skipped",
+        "unknown"
+      ]
+    },
+    "agent_runtime_status": {
+      "enum": [
+        "complete",
+        "incomplete",
+        "review_required",
+        "failed",
+        "unknown"
+      ]
+    },
+    "background_tasks_status": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "expected_outputs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "output_files": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "file_write_status": {
+      "type": "string"
+    },
+    "upload_ready": {
+      "type": "boolean"
+    },
+    "checkpoint_status": {
+      "enum": [
+        "valid",
+        "review_required",
+        "invalid",
+        "blocked"
+      ]
+    },
+    "blocking_findings": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "safe_next_action": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "additionalProperties": true
+}

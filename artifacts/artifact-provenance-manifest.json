@@ -1,0 +1,27 @@
+{
+  "artifact_type": "artifact_provenance_manifest",
+  "version": "1.0",
+  "manifest_id": "artifact_provenance_mock_2026_07_24_001",
+  "run_id": "run_mock_2026_07_24_handoff_001",
+  "run_attempt": 1,
+  "branch": "feature/agent-lab-v1",
+  "commit_sha": "ffffffff11111111aaaaaaaa22222222bbbbbbbb",
+  "workflow_name": "Multi-Agent Artifact Handoff",
+  "producing_job": "planner",
+  "consuming_job": "builder",
+  "producing_agent": "Planner Agent",
+  "artifact_name": "planner-output",
+  "artifact_digest": "fake_sha256_aaaaaaaa11111111bbbbbbbb22222222cccccccc33333333dddddddd44444444",
+  "digest_algorithm": "fake-sha256",
+  "uploaded_at": "2026-07-24T10:30:00Z",
+  "consumed_at": "2026-07-24T10:31:00Z",
+  "artifact_retention_days": 7,
+  "name_collision_risk": true,
+  "stale_artifact_risk": true,
+  "provenance_status": "review_required",
+  "blocking_findings": [
+    "Artifact name alone is not sufficient proof of identity.",
+    "Name collision and stale artifact risk require run, branch, commit, job, and digest checks before consumption."
+  ],
+  "safe_next_action": "Require provenance-bound artifact consumption before the Builder Agent uses the planner output."
+}

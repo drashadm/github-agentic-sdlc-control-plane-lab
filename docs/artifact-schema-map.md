@@ -36,3 +36,9 @@ Schema validation does not prove an agent was correct. It proves the artifact is
 | `artifacts/schema-semantic-validation-report.json` | `schemas/schema-semantic-validation-report.schema.json` | Preserves evidence for structural validation, semantic validation, generic filler detection, semantic null detection, and cross-artifact consistency checks. |
 | `schemas/schema-semantic-validation-report.schema.json` | N/A | Defines the educational contract for schema-versus-semantic validation reports. |
 | `artifacts/validation-telemetry.log` | N/A | Shows a safe validation trace where JSON parsing and schema checks pass while semantic and cross-artifact gates block downstream automation. |
+| `artifacts/pipeline-execution-checkpoint.json` | `schemas/pipeline-execution-checkpoint.schema.json` | Preserves evidence comparing GitHub Actions runner success with internal agent runtime completion before upload. |
+| `schemas/pipeline-execution-checkpoint.schema.json` | N/A | Defines the educational contract for runner-state versus agent-runtime checkpoints. |
+| `artifacts/artifact-transaction-report.json` | `schemas/artifact-transaction-report.schema.json` | Preserves artifact transaction readiness evidence, including file size, parse/schema/semantic status, record counts, fake digest, and gate decisions. |
+| `schemas/artifact-transaction-report.schema.json` | N/A | Defines the educational contract for artifact completeness and transaction-readiness reports. |
+| `artifacts/artifact-provenance-manifest.json` | `schemas/artifact-provenance-manifest.schema.json` | Preserves provenance-bound downstream consumption evidence for run, branch, commit, workflow, job, producing agent, artifact name, and fake digest. |
+| `schemas/artifact-provenance-manifest.schema.json` | N/A | Defines the educational contract for provenance manifests used in agent handoff review. |

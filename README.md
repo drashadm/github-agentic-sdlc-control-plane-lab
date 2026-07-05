@@ -37,6 +37,26 @@ Humans approve high risk action.
 
 ---
 
+## Agentic Vulnerability-to-Defense Matrix
+
+The full reviewer matrix lives in `docs/vulnerability-to-defense-matrix.md`. It maps each lab to the agentic failure mode it demonstrates and the deterministic control pattern used to contain it. This is the fastest way for a reviewer to see that the lab is about governed agentic SDLC design, not app code or exploit execution.
+
+| Lab | Core Failure Mode | Control Pattern |
+| --- | --- | --- |
+| Lab 01 | Agent profile authority is treated as passive prose | Review profiles as protected control-plane assets |
+| Lab 02 | Workflow output state drifts or disappears | Validate state manifests and provenance before handoff |
+| Lab 03 | MCP tools expand runtime authority | Enforce least-privilege tool allowlists and output checks |
+| Lab 04 | Resumed sessions carry stale continuity claims | Revalidate branch, commit, run, memory, and approval state |
+| Lab 05 | Hooks advise but do not enforce | Mediate tool use before execution and fail closed |
+| Lab 06 | Memory is mistaken for authorization | Treat memory as untrusted cache and verify against repo evidence |
+| Lab 07 | Consolidation flattens dissent into consensus | Preserve dissent and deterministic global status |
+| Lab 08 | Draft notes leak into public output | Serialize only approved public fields and block leakage |
+| Lab 09 | Schema-valid artifacts are semantically void | Layer schema checks with semantic and cross-artifact validation |
+| Lab 10 | Green workflow status masks invalid handoff | Require transaction checkpoints and provenance-bound gates |
+| Lab 11 | Zombie Pipeline hides compound trust collapse | Review the full chain of trust before authority transfer |
+
+---
+
 ## What This Lab Demonstrates
 
 * How to separate planning, building, reviewing, auditing, and consolidation responsibilities across agents
@@ -77,13 +97,24 @@ org-governance/    Organization-level custom agent governance examples
 2. Read `docs/ROADMAP.md` for planned polish and validation milestones.
 3. Read `docs/gh-600-domain-map.md` to understand the six major capability areas.
 4. Review `docs/artifact-schema-map.md`, `docs/risk-to-github-mitigation-map.md`, and `docs/agentic-threat-model-map.md` for governance maps.
-5. Read `docs/advanced-agentic-failure-modes.md`, `docs/context-window-gating.md`, and `docs/cost-and-retry-control.md` for deeper agentic failure patterns.
-6. Use `docs/workflow-validation-guide.md` and `docs/workflow-dry-run-checklist.md` to review workflow gates before trusting downstream agent execution.
-7. Read `docs/state-serializability.md` to understand workflow outputs and artifact names as multi-agent state contracts.
-8. Inspect the agent profiles under `.github/agents/` and note how tool access is scoped.
-9. Review MCP server examples under `mcp/`.
-10. Review workflow governance patterns under `.github/workflows/`.
-11. Complete the labs under `labs/` by reading the artifacts and explaining what is safe, risky, broken, or missing.
+5. Open `docs/vulnerability-to-defense-matrix.md` for the lab-by-lab failure-mode and control-pattern map.
+6. Read `docs/advanced-agentic-failure-modes.md`, `docs/context-window-gating.md`, and `docs/cost-and-retry-control.md` for deeper agentic failure patterns.
+7. Read `docs/zombie-pipeline-governance.md` to understand compound handoff failure and chain-of-trust review.
+8. Read `docs/artifact-transaction-governance.md` to understand workflow success versus agentic success in artifact handoffs.
+9. Read `docs/schema-semantic-validation-governance.md` to understand why schema validity proves shape, not content integrity.
+10. Use `docs/workflow-validation-guide.md` and `docs/workflow-dry-run-checklist.md` to review workflow gates before trusting downstream agent execution.
+11. Read `docs/state-serializability.md` to understand workflow outputs and artifact names as multi-agent state contracts.
+12. Read `docs/session-continuity-governance.md` to understand resumed session and stale-state review.
+13. Read `docs/hook-enforcement-governance.md` to understand pre-tool guardrails and approval binding.
+14. Read `docs/memory-governance.md` to understand memory validation, quarantine, and belief/authorization separation.
+15. Read `docs/multi-agent-coordination-governance.md` to understand dissent preservation and consolidation fidelity.
+16. Read `docs/output-serialization-governance.md` to understand draft/final separation and public artifact promotion gates.
+17. Read `docs/mcp-tool-boundary-governance.md` before reviewing MCP server examples.
+18. Use `docs/lab-nuance-upgrade-playbook.md` and `docs/v0.5-lab-upgrade-plan.md` to understand the remaining lab upgrade quality bar.
+19. Inspect the agent profiles under `.github/agents/` and note how tool access is scoped.
+20. Review MCP server examples under `mcp/`.
+21. Review workflow governance patterns under `.github/workflows/`.
+22. Complete the labs under `labs/` by reading the artifacts and explaining what is safe, risky, broken, or missing.
 
 Use `labs/README.md` for the recommended lab order, difficulty levels, and answer-key guidance.
 

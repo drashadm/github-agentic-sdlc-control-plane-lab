@@ -1,0 +1,84 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "hook-approval-binding-report.schema.json",
+  "title": "Hook Approval Binding Report Artifact",
+  "description": "Educational schema for binding human approval to a specific hook-mediated operation.",
+  "type": "object",
+  "required": [
+    "artifact_type",
+    "version",
+    "approval_id",
+    "approved_by_role",
+    "approval_scope",
+    "approved_operation_summary",
+    "payload_hash",
+    "payload_hash_algorithm",
+    "run_id",
+    "branch",
+    "commit_sha",
+    "approval_valid_for",
+    "mutation_detected_after_approval",
+    "approval_status",
+    "safe_next_action"
+  ],
+  "properties": {
+    "artifact_type": {
+      "const": "hook_approval_binding_report"
+    },
+    "version": {
+      "type": "string"
+    },
+    "approval_id": {
+      "type": "string"
+    },
+    "approved_by_role": {
+      "type": "string"
+    },
+    "approval_scope": {
+      "enum": [
+        "single_operation",
+        "session",
+        "broad_capability"
+      ]
+    },
+    "approved_operation_summary": {
+      "type": "string"
+    },
+    "payload_hash": {
+      "type": "string"
+    },
+    "payload_hash_algorithm": {
+      "type": "string"
+    },
+    "run_id": {
+      "type": "string"
+    },
+    "branch": {
+      "type": "string"
+    },
+    "commit_sha": {
+      "type": "string",
+      "minLength": 7
+    },
+    "approval_valid_for": {
+      "type": "string"
+    },
+    "mutation_detected_after_approval": {
+      "type": "boolean"
+    },
+    "approval_status": {
+      "enum": [
+        "valid",
+        "invalid",
+        "expired",
+        "mutation_detected",
+        "blocked"
+      ]
+    },
+    "safe_next_action": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "additionalProperties": true
+}

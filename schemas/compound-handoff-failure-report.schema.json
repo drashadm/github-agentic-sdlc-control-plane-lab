@@ -1,0 +1,125 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "compound-handoff-failure-report.schema.json",
+  "title": "Compound Handoff Failure Report Artifact",
+  "description": "Educational schema for capstone review of compound agentic handoff failure across control-plane layers.",
+  "type": "object",
+  "required": [
+    "artifact_type",
+    "version",
+    "report_id",
+    "run_id",
+    "branch",
+    "commit_sha",
+    "failed_trust_chain_layers",
+    "schema_drift_findings",
+    "semantic_void_findings",
+    "unexpected_field_findings",
+    "memory_drift_findings",
+    "artifact_provenance_findings",
+    "mcp_authority_findings",
+    "hook_enforcement_findings",
+    "retry_budget_findings",
+    "consolidator_fidelity_findings",
+    "human_approval_risk",
+    "global_decision",
+    "safe_next_action"
+  ],
+  "properties": {
+    "artifact_type": {
+      "const": "compound_handoff_failure_report"
+    },
+    "version": {
+      "type": "string"
+    },
+    "report_id": {
+      "type": "string"
+    },
+    "run_id": {
+      "type": "string"
+    },
+    "branch": {
+      "type": "string"
+    },
+    "commit_sha": {
+      "type": "string",
+      "minLength": 7
+    },
+    "failed_trust_chain_layers": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "schema_drift_findings": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "semantic_void_findings": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "unexpected_field_findings": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "memory_drift_findings": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "artifact_provenance_findings": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "mcp_authority_findings": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "hook_enforcement_findings": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "retry_budget_findings": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "consolidator_fidelity_findings": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "human_approval_risk": {
+      "type": "string"
+    },
+    "global_decision": {
+      "enum": [
+        "approved",
+        "review_required",
+        "human_escalation_required",
+        "blocked"
+      ]
+    },
+    "safe_next_action": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "additionalProperties": true
+}

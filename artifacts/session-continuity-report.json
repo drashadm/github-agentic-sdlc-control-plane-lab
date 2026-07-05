@@ -1,0 +1,51 @@
+{
+  "artifact_type": "session_continuity_report",
+  "version": "1.0",
+  "session_id": "session_new_001",
+  "session_state": "resumed",
+  "previous_run_id": "run_mock_2026_07_24_1300",
+  "current_run_id": "run_mock_2026_07_24_1500",
+  "previous_commit_sha": "dddddddd33333333eeeeeeee44444444ffffffff",
+  "current_commit_sha": "aaaaaaaa11111111bbbbbbbb22222222cccccccc",
+  "previous_branch": "feature/agent-lab-v1",
+  "current_branch": "feature/agent-lab-v1",
+  "resumed_from_artifact": "artifacts/planner-output.json",
+  "memory_facts_checked": [
+    "repo_fact_001",
+    "repo_fact_002"
+  ],
+  "memory_validation_status": "review_required",
+  "stale_context_findings": [
+    {
+      "finding": "Commit drift detected between original and resumed session.",
+      "evidence": "artifacts/git-state-snapshot.json",
+      "operator_response": "Regenerate or reapprove plan artifacts before privileged execution."
+    },
+    {
+      "finding": "Stored memory about tool permissions may conflict with current agent profile state.",
+      "evidence": "memory/stale-memory-drift-scenario.md",
+      "operator_response": "Trust current repository artifacts over stale memory and refresh repository facts."
+    }
+  ],
+  "previous_error_footprints": [
+    {
+      "source": "logs/cloud-agent-stuck-session.log",
+      "summary": "Prior cloud-agent run stalled on workflow approval.",
+      "risk": "A resumed agent may treat the stalled work as complete or replay the old fix path without checking current workflow state."
+    },
+    {
+      "source": "logs/workflow-permission-denied.log",
+      "summary": "Prior security-gate inspection failed due permission scope.",
+      "risk": "A resumed agent may keep chasing an old permission error after the workflow or branch changed."
+    }
+  ],
+  "tool_permissions_changed": true,
+  "approval_state_checked": false,
+  "continuity_status": "review_required",
+  "blocking_findings": [
+    "Commit SHA mismatch requires state review.",
+    "Approval state must be checked before privileged execution.",
+    "Memory facts require current-run validation."
+  ],
+  "safe_next_action": "Block privileged execution until continuity is verified against current branch, commit, memory, permissions, prior errors, and approval state."
+}

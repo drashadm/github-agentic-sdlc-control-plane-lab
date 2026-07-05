@@ -1,0 +1,29 @@
+{
+  "artifact_type": "artifact_transaction_report",
+  "version": "1.0",
+  "report_id": "artifact_transaction_mock_2026_07_24_001",
+  "run_id": "run_mock_2026_07_24_handoff_001",
+  "branch": "feature/agent-lab-v1",
+  "commit_sha": "ffffffff11111111aaaaaaaa22222222bbbbbbbb",
+  "artifact_under_review": "artifacts/planner-output.json",
+  "producing_job": "planner",
+  "consuming_job": "builder",
+  "file_exists": true,
+  "file_size_bytes": 128,
+  "parse_status": "passed",
+  "schema_validation_status": "passed",
+  "semantic_validation_status": "review_required",
+  "expected_record_count": 3,
+  "actual_record_count": 1,
+  "content_digest": "fake_sha256_aaaaaaaa11111111bbbbbbbb22222222cccccccc33333333dddddddd44444444",
+  "digest_algorithm": "fake-sha256",
+  "atomic_write_status": "incomplete",
+  "upload_gate_status": "blocked",
+  "downstream_gate_status": "blocked",
+  "blocking_findings": [
+    "Artifact exists and parses but contains fewer records than expected.",
+    "Atomic write status is incomplete.",
+    "Semantic validation has not approved the artifact for downstream agent use."
+  ],
+  "safe_next_action": "Block upload and downstream consumption until the artifact is complete, semantically valid, and transaction-ready."
+}

@@ -1,0 +1,34 @@
+{
+  "artifact_type": "reviewer_note_leakage_report",
+  "version": "1.0",
+  "report_id": "reviewer_note_leakage_mock_2026_07_24_001",
+  "run_id": "run_mock_2026_07_24_publication_001",
+  "branch": "feature/agent-lab-v1",
+  "commit_sha": "dddddddd11111111eeeeeeee22222222ffffffff",
+  "public_artifacts_checked": [
+    "docs/generated-public-summary.md"
+  ],
+  "internal_sources_checked": [
+    "logs/reviewer-scratchpad.json"
+  ],
+  "leakage_patterns_checked": [
+    "[simulated internal reviewer note]",
+    "[hidden scratchpad placeholder]",
+    "[internal instruction fragment omitted]",
+    "[private context reference omitted]",
+    "unresolved reviewer comment"
+  ],
+  "leaked_items_detected": [
+    "[simulated internal reviewer note]"
+  ],
+  "draft_residue_detected": true,
+  "hidden_instruction_fragment_detected": false,
+  "private_context_reference_detected": false,
+  "severity": "high",
+  "publication_decision": "blocked",
+  "blocking_findings": [
+    "A simulated internal reviewer note appeared in a public artifact candidate.",
+    "The public artifact must be regenerated from an approved public payload field."
+  ],
+  "safe_next_action": "Block publication until the public artifact is regenerated from final_output or another approved public payload field and the leakage scan passes."
+}

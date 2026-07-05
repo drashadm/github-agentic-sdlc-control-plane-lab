@@ -1,0 +1,45 @@
+# Educational governance pattern:
+# This workflow models a documentation promotion gate only.
+# It does not publish externally, deploy, or use secrets.
+
+name: Publish Docs Educational Gate
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate-public-docs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate structured publication artifacts
+        run: |
+          test -f logs/reviewer-scratchpad.json
+          test -f artifacts/reviewer-note-leakage-report.json
+          test -f artifacts/publication-readiness-report.json
+
+      - name: Check simulated internal markers
+        run: |
+          if grep -R -E '\[simulated internal reviewer note\]|\[internal instruction fragment omitted\]|\[private context reference omitted\]|\[hidden scratchpad placeholder\]' docs/*.md; then
+            echo "Internal marker detected in public docs."
+            exit 1
+          fi
+
+      - name: Block failed promotion status
+        run: |
+          if grep -E '"publication_decision": "(blocked|review_required)"' artifacts/reviewer-note-leakage-report.json; then
+            echo "Publication blocked or requires review."
+            exit 1
+          fi
+          if grep -E '"promotion_status": "(blocked|review_required)"' artifacts/publication-readiness-report.json; then
+            echo "Publication readiness blocked or requires review."
+            exit 1
+          fi
+
+      - name: Educational summary
+        run: |
+          echo "Docs promotion gate completed for educational review only."

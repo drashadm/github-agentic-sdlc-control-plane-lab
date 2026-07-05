@@ -6,6 +6,9 @@
       "fact": "Executor agent is the only profile with execute access.",
       "scope": "repository",
       "source": ".github/agents/executor.agent.md",
+      "source_commit_sha": "bbbbbbbb11111111cccccccc22222222dddddddd",
+      "source_branch": "feature/agent-lab-v1",
+      "validated_at": "2026-07-24T14:00:00Z",
       "last_validated": "2026-07-24T14:00:00Z",
       "expires_after_days": 28,
       "status": "valid"
@@ -15,9 +18,31 @@
       "fact": "Security gate must run before consolidated operator report.",
       "scope": "repository",
       "source": ".github/workflows/consolidated-operator-report.yml",
+      "source_commit_sha": "aaaaaaaa11111111bbbbbbbb22222222cccccccc",
+      "source_branch": "feature/agent-lab-v1",
+      "validated_at": "2026-06-01T12:00:00Z",
       "last_validated": "2026-07-24T14:00:00Z",
       "expires_after_days": 28,
-      "status": "valid"
+      "status": "stale"
+    },
+    {
+      "id": "repo_fact_003",
+      "fact": "Builder agent may execute test commands after planning.",
+      "scope": "agent-profile",
+      "source": "memory/stale-memory-drift-scenario.md",
+      "validated_at": "2026-06-01T12:00:00Z",
+      "expires_after_days": 14,
+      "status": "conflicts_with_agent_profile",
+      "conflicts_with": ".github/agents/builder.agent.md"
+    },
+    {
+      "id": "repo_fact_004",
+      "fact": "A previous workflow review required a manual approval gate.",
+      "scope": "workflow",
+      "source": "logs/cloud-agent-stuck-session.log",
+      "last_validated": "2026-07-24T16:02:12Z",
+      "expires_after_days": 7,
+      "status": "untrusted_missing_source_commit"
     }
   ]
 }

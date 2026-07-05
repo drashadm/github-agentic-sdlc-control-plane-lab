@@ -1,0 +1,17 @@
+{
+  "artifact_type": "hook_approval_binding_report",
+  "version": "1.0",
+  "approval_id": "approval_mock_hook_001",
+  "approved_by_role": "human_operator",
+  "approval_scope": "single_operation",
+  "approved_operation_summary": "[blocked file deletion intent] reviewed as educational denial example",
+  "payload_hash": "sha256:111122223333444455556666777788889999aaaabbbbccccddddeeeeffff0000",
+  "payload_hash_algorithm": "sha256",
+  "run_id": "run_mock_2026_07_24_hook_001",
+  "branch": "feature/agent-lab-v1",
+  "commit_sha": "bbbbbbbb11111111cccccccc22222222dddddddd",
+  "approval_valid_for": "one exact preToolUse payload on the recorded run, branch, and commit",
+  "mutation_detected_after_approval": true,
+  "approval_status": "mutation_detected",
+  "safe_next_action": "Block execution because the payload changed after approval; require a new scoped review and payload hash."
+}

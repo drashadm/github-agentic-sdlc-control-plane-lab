@@ -25,3 +25,11 @@ State handoff retries should have:
 * explicit failed state
 * cost/rate-limit annotation
 * no fallback to stale context unless explicitly approved and labeled
+
+## Denial of Wallet and Silent Retry Loops
+
+Silent schema drift can cause repeated LLM attempts. Each retry may include more context, logs, artifacts, and prior failures, so cost growth can compound while semantic progress remains zero.
+
+Retries must have explicit stop conditions. Budget breaches should block downstream automation, and zero semantic progress should stop the agent chain rather than triggering another larger retry.
+
+This lab uses generic educational token and cost values only. It does not implement vendor billing enforcement, live token metering, or billing kill-switches.

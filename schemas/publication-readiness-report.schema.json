@@ -1,0 +1,102 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "publication-readiness-report.schema.json",
+  "title": "Publication Readiness Report Artifact",
+  "description": "Educational schema for validating public artifact promotion evidence.",
+  "type": "object",
+  "required": [
+    "artifact_type",
+    "version",
+    "report_id",
+    "run_id",
+    "branch",
+    "commit_sha",
+    "artifact_under_review",
+    "source_payload_type",
+    "output_channel",
+    "serialization_contract_checked",
+    "public_payload_field",
+    "internal_fields_excluded",
+    "unresolved_comments_detected",
+    "reviewer_notes_detected",
+    "hidden_instruction_fragments_detected",
+    "private_context_references_detected",
+    "promotion_status",
+    "required_human_review",
+    "safe_next_action"
+  ],
+  "properties": {
+    "artifact_type": {
+      "const": "publication_readiness_report"
+    },
+    "version": {
+      "type": "string"
+    },
+    "report_id": {
+      "type": "string"
+    },
+    "run_id": {
+      "type": "string"
+    },
+    "branch": {
+      "type": "string"
+    },
+    "commit_sha": {
+      "type": "string",
+      "minLength": 7
+    },
+    "artifact_under_review": {
+      "type": "string"
+    },
+    "source_payload_type": {
+      "enum": [
+        "structured_json",
+        "markdown",
+        "raw_llm_buffer",
+        "unknown"
+      ]
+    },
+    "output_channel": {
+      "type": "string"
+    },
+    "serialization_contract_checked": {
+      "type": "boolean"
+    },
+    "public_payload_field": {
+      "type": "string"
+    },
+    "internal_fields_excluded": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "unresolved_comments_detected": {
+      "type": "boolean"
+    },
+    "reviewer_notes_detected": {
+      "type": "boolean"
+    },
+    "hidden_instruction_fragments_detected": {
+      "type": "boolean"
+    },
+    "private_context_references_detected": {
+      "type": "boolean"
+    },
+    "promotion_status": {
+      "enum": [
+        "approved",
+        "review_required",
+        "blocked"
+      ]
+    },
+    "required_human_review": {
+      "type": "boolean"
+    },
+    "safe_next_action": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "additionalProperties": true
+}

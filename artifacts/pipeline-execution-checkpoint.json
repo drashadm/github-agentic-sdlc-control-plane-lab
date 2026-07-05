@@ -1,0 +1,39 @@
+{
+  "artifact_type": "pipeline_execution_checkpoint",
+  "version": "1.0",
+  "checkpoint_id": "pipeline_checkpoint_mock_2026_07_24_001",
+  "run_id": "run_mock_2026_07_24_handoff_001",
+  "branch": "feature/agent-lab-v1",
+  "commit_sha": "ffffffff11111111aaaaaaaa22222222bbbbbbbb",
+  "workflow_name": "Multi-Agent Artifact Handoff",
+  "job_name": "planner",
+  "producing_agent": "Planner Agent",
+  "runner_step_status": "success",
+  "agent_runtime_status": "incomplete",
+  "background_tasks_status": [
+    {
+      "task_name": "write_planner_records",
+      "status": "incomplete",
+      "reason": "Simulated background task did not finish before upload readiness check."
+    }
+  ],
+  "expected_outputs": [
+    "artifacts/planner-output.json"
+  ],
+  "output_files": [
+    {
+      "path": "artifacts/planner-output.json",
+      "status": "partial",
+      "records_expected": 3,
+      "records_written": 1
+    }
+  ],
+  "file_write_status": "partial",
+  "upload_ready": false,
+  "checkpoint_status": "blocked",
+  "blocking_findings": [
+    "Runner step reported success while agent runtime remained incomplete.",
+    "Output file was not ready for upload."
+  ],
+  "safe_next_action": "Block artifact upload and downstream consumption until the agent runtime completes and expected outputs pass transaction checks."
+}

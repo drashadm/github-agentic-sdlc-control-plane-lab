@@ -96,17 +96,56 @@ Focus:
 * fail-closed downstream gating
 * state serializability lab upgrade
 
-## v0.5 - More Realistic Logs and Failure Scenarios
+## v0.5 - Lab Nuance Deepening
 
-Status: Planned
+Status: Lab upgrades complete in branch; capstone polish complete in branch.
 
 Focus:
 
-* Richer session logs
-* Ambiguous failures
-* Misleading success states
-* Stale context examples
-* Multi-agent conflict examples
+* complete lab suite alignment
+* vulnerability-to-defense matrix
+* v0.5 capstone review
+* final review before merge
+* upgrade Labs 03-11
+* apply Lab 01 and Lab 02 quality bar across remaining labs
+* deepen agentic failure-mode reasoning
+* resumed session continuity
+* temporal drift
+* stale state validation
+* session logs as governance evidence
+* hook enforcement
+* semantic intent mediation
+* approval-to-payload binding
+* advisory vs deterministic guardrails
+* fail-closed tool mediation
+* memory governance
+* stale memory validation
+* belief vs authorization separation
+* memory quarantine before context injection
+* multi-agent coordination governance
+* semantic compression loss
+* dissent preservation
+* consolidation fidelity
+* deterministic global-status merge rules
+* output serialization governance
+* reviewer note leakage
+* draft/final boundary protection
+* public artifact promotion gates
+* schema versus semantic validation
+* schema-compliant confabulation
+* semantic null detection
+* cross-artifact consistency checks
+* workflow success versus agentic success
+* artifact transaction governance
+* provenance-bound artifact handoffs
+* fail-closed downstream consumption gates
+* Zombie Pipeline detection
+* compound handoff failure review
+* token and retry budget accountability
+* semantic progress assertions
+* chain-of-trust review across state, schema, memory, artifacts, tools, hooks, and human approval
+* keep one cumulative feature branch
+* preserve public-safe educational examples
 
 ## v1.0 - Public Showcase Version
 

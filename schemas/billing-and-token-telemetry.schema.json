@@ -1,0 +1,110 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "billing-and-token-telemetry.schema.json",
+  "title": "Billing and Token Telemetry Artifact",
+  "description": "Educational schema for tracking fake token and cost telemetry during silent retry loops.",
+  "type": "object",
+  "required": [
+    "artifact_type",
+    "version",
+    "telemetry_id",
+    "run_id",
+    "branch",
+    "commit_sha",
+    "workflow_name",
+    "agent_chain",
+    "budget_policy",
+    "retry_attempts",
+    "token_usage_by_attempt",
+    "estimated_cost_by_attempt",
+    "context_window_growth",
+    "stop_conditions",
+    "budget_status",
+    "anomaly_detected",
+    "blocking_findings",
+    "safe_next_action"
+  ],
+  "properties": {
+    "artifact_type": {
+      "const": "billing_and_token_telemetry"
+    },
+    "version": {
+      "type": "string"
+    },
+    "telemetry_id": {
+      "type": "string"
+    },
+    "run_id": {
+      "type": "string"
+    },
+    "branch": {
+      "type": "string"
+    },
+    "commit_sha": {
+      "type": "string",
+      "minLength": 7
+    },
+    "workflow_name": {
+      "type": "string"
+    },
+    "agent_chain": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "budget_policy": {
+      "type": "object"
+    },
+    "retry_attempts": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "token_usage_by_attempt": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "estimated_cost_by_attempt": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "context_window_growth": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "stop_conditions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "budget_status": {
+      "enum": [
+        "within_limit",
+        "review_required",
+        "exceeded",
+        "blocked"
+      ]
+    },
+    "anomaly_detected": {
+      "type": "boolean"
+    },
+    "blocking_findings": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "safe_next_action": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "additionalProperties": true
+}

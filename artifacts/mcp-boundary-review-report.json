@@ -1,0 +1,38 @@
+{
+  "artifact_type": "mcp_boundary_review_report",
+  "version": "1.0",
+  "mcp_configs_reviewed": [
+    "mcp/local-stdio-safe-example.yml",
+    "mcp/local-stdio-risky-example.yml",
+    "mcp/remote-http-example.yml",
+    "mcp/broad-server-wildcard-risk.yml",
+    "mcp/server-manifest-snapshot.json"
+  ],
+  "agent_profiles_reviewed": [
+    ".github/agents/security-auditor.agent.md",
+    ".github/agents/executor.agent.md"
+  ],
+  "explicit_tools": [
+    "governance-api/read-policy",
+    "governance-api/read-audit-summary",
+    "repo-metadata/list-files",
+    "repo-metadata/read-metadata"
+  ],
+  "wildcard_tools": [
+    "governance-api/*",
+    "local-shell/*"
+  ],
+  "remote_servers": [
+    "governance-api"
+  ],
+  "local_stdio_servers": [
+    "repo-metadata",
+    "local-shell"
+  ],
+  "warnings": [
+    "Wildcard MCP access is intentionally included as an educational risk example.",
+    "Tool output should be validated before downstream agents treat it as evidence."
+  ],
+  "blocking_findings": [],
+  "safe_next_action": "Require human review before enabling new MCP tools, wildcard server access, or remote tool boundaries."
+}

@@ -1,0 +1,106 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reviewer-note-leakage-report.schema.json",
+  "title": "Reviewer Note Leakage Report Artifact",
+  "description": "Educational schema for recording reviewer note leakage detection before publication.",
+  "type": "object",
+  "required": [
+    "artifact_type",
+    "version",
+    "report_id",
+    "run_id",
+    "branch",
+    "commit_sha",
+    "public_artifacts_checked",
+    "internal_sources_checked",
+    "leakage_patterns_checked",
+    "leaked_items_detected",
+    "draft_residue_detected",
+    "hidden_instruction_fragment_detected",
+    "private_context_reference_detected",
+    "severity",
+    "publication_decision",
+    "blocking_findings",
+    "safe_next_action"
+  ],
+  "properties": {
+    "artifact_type": {
+      "const": "reviewer_note_leakage_report"
+    },
+    "version": {
+      "type": "string"
+    },
+    "report_id": {
+      "type": "string"
+    },
+    "run_id": {
+      "type": "string"
+    },
+    "branch": {
+      "type": "string"
+    },
+    "commit_sha": {
+      "type": "string",
+      "minLength": 7
+    },
+    "public_artifacts_checked": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "internal_sources_checked": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "leakage_patterns_checked": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "leaked_items_detected": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "draft_residue_detected": {
+      "type": "boolean"
+    },
+    "hidden_instruction_fragment_detected": {
+      "type": "boolean"
+    },
+    "private_context_reference_detected": {
+      "type": "boolean"
+    },
+    "severity": {
+      "enum": [
+        "low",
+        "medium",
+        "high",
+        "critical"
+      ]
+    },
+    "publication_decision": {
+      "enum": [
+        "approved",
+        "review_required",
+        "blocked"
+      ]
+    },
+    "blocking_findings": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "safe_next_action": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,22 @@
+{
+  "artifact_type": "intent_analysis_payload",
+  "version": "1.0",
+  "session_id": "session_2026_07_hook_lab_001",
+  "run_id": "run_mock_2026_07_24_hook_001",
+  "branch": "feature/agent-lab-v1",
+  "commit_sha": "bbbbbbbb11111111cccccccc22222222dddddddd",
+  "requested_tool": "execute",
+  "raw_request_summary": "[obfuscated destructive file operation omitted]",
+  "interpreted_capability": "delete_repository_artifact",
+  "target_resource_type": "repository_artifact",
+  "target_resource_scope": "artifacts/",
+  "risk_level": "critical",
+  "matched_policy_rules": [
+    "deny-destructive-execute-without-human-approval",
+    "require-payload-bound-approval-for-artifact-mutation"
+  ],
+  "decision": "deny",
+  "decision_reason": "The requested capability would remove repository evidence and lacks payload-bound human approval.",
+  "requires_human_approval": true,
+  "safe_next_action": "Block execution and require a scoped approval tied to run ID, branch, commit SHA, and payload hash."
+}

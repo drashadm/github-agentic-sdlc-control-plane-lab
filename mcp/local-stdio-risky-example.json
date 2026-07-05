@@ -1,0 +1,25 @@
+{
+  "example_type": "local_stdio_mcp_risky_example",
+  "educational_only": true,
+  "mcp_server": {
+    "name": "local-shell",
+    "transport": "stdio",
+    "command_placeholder": "[unsafe shell-capable server omitted]",
+    "tools": [
+      "local-shell/*"
+    ]
+  },
+  "risk_notes": {
+    "risk_level": "high",
+    "why_risky": [
+      "Wildcard tool access grants all local-shell tools.",
+      "Stdio is a host subprocess boundary that requires isolation and trusted configuration.",
+      "Broad local process context can expose more authority than the agent role should have."
+    ],
+    "safe_operator_response": [
+      "Replace wildcard access with explicit reviewed tools.",
+      "Require human approval for execution-like capabilities.",
+      "Document subprocess isolation and trust boundary."
+    ]
+  }
+}

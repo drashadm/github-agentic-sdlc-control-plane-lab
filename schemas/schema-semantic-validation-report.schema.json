@@ -1,0 +1,122 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema-semantic-validation-report.schema.json",
+  "title": "Schema and Semantic Validation Report Artifact",
+  "description": "Educational schema for recording structural validation and semantic validation evidence before downstream agent use.",
+  "type": "object",
+  "required": [
+    "artifact_type",
+    "version",
+    "report_id",
+    "run_id",
+    "branch",
+    "commit_sha",
+    "artifacts_checked",
+    "schemas_checked",
+    "structural_validation_status",
+    "semantic_validation_status",
+    "semantic_nulls_detected",
+    "generic_filler_detected",
+    "type_coercion_findings",
+    "schema_induced_omissions",
+    "cross_artifact_conflicts",
+    "downstream_trust_risks",
+    "blocking_findings",
+    "safe_next_action"
+  ],
+  "properties": {
+    "artifact_type": {
+      "const": "schema_semantic_validation_report"
+    },
+    "version": {
+      "type": "string"
+    },
+    "report_id": {
+      "type": "string"
+    },
+    "run_id": {
+      "type": "string"
+    },
+    "branch": {
+      "type": "string"
+    },
+    "commit_sha": {
+      "type": "string",
+      "minLength": 7
+    },
+    "artifacts_checked": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "schemas_checked": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "structural_validation_status": {
+      "enum": [
+        "passed",
+        "failed",
+        "not_run"
+      ]
+    },
+    "semantic_validation_status": {
+      "enum": [
+        "valid",
+        "review_required",
+        "invalid",
+        "blocked"
+      ]
+    },
+    "semantic_nulls_detected": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "generic_filler_detected": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "type_coercion_findings": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "schema_induced_omissions": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "cross_artifact_conflicts": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "downstream_trust_risks": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "blocking_findings": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "safe_next_action": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "additionalProperties": true
+}

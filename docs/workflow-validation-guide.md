@@ -28,6 +28,7 @@ Inspect:
 | `.github/workflows/multi-agent-artifact-handoff.yml` | Demonstrate staged artifact handoffs across planner, builder, and reviewer jobs | `needs`, job outputs, and artifact naming |
 | `.github/workflows/security-gate.yml` | Inspect active agent and workflow risk patterns while preserving educational examples | Distinguishing active config risk from inert lab examples |
 | `.github/workflows/consolidated-operator-report.yml` | Collect evidence before publishing a final operator report | Evidence gating and final report dependencies |
+| `.github/workflows/publish-docs.yml` | Model an inert documentation promotion gate for Lab 08 | Output serialization, leakage checks, and publication readiness |
 
 ## Common Workflow Failure Modes
 

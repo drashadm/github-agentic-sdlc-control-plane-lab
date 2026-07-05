@@ -1,0 +1,29 @@
+{
+  "artifact_type": "zombie_pipeline_failure_report",
+  "version": "1.0",
+  "report_id": "zombie_pipeline_mock_2026_07_24_001",
+  "run_id": "run_mock_2026_07_24_capstone_001",
+  "branch": "feature/agent-lab-v1",
+  "commit_sha": "aaaaaaaa11111111bbbbbbbb22222222cccccccc",
+  "visible_pipeline_status": "success",
+  "agentic_state_status": "collapsed",
+  "processed_items_expected": 2,
+  "processed_items_actual": 0,
+  "exit_codes": [
+    {
+      "job": "builder",
+      "exit_code": 0
+    }
+  ],
+  "schema_status": "passed",
+  "semantic_status": "blocked",
+  "artifact_provenance_status": "review_required",
+  "retry_loop_status": "exceeded",
+  "final_report_status": "blocked",
+  "zombie_pipeline_detected": true,
+  "blocking_findings": [
+    "Visible pipeline status was success while no expected items were processed.",
+    "Final report must not be approved while semantic validation is blocked."
+  ],
+  "safe_next_action": "Block final approval, preserve evidence, and reset the agent chain from a validated handoff artifact."
+}

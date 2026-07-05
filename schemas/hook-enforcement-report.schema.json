@@ -1,0 +1,82 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "hook-enforcement-report.schema.json",
+  "title": "Hook Enforcement Report Artifact",
+  "description": "Educational schema for deterministic hook guardrail evidence.",
+  "type": "object",
+  "required": [
+    "artifact_type",
+    "version",
+    "hook_events_reviewed",
+    "blocked_tool_calls",
+    "allowed_tool_calls",
+    "rewritten_tool_calls",
+    "advisory_events",
+    "enforcement_failures",
+    "bypass_risks",
+    "protected_files_checked",
+    "audit_evidence",
+    "safe_next_action"
+  ],
+  "properties": {
+    "artifact_type": {
+      "const": "hook_enforcement_report"
+    },
+    "version": {
+      "type": "string"
+    },
+    "hook_events_reviewed": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "blocked_tool_calls": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "allowed_tool_calls": {
+      "type": "array"
+    },
+    "rewritten_tool_calls": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "advisory_events": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "enforcement_failures": {
+      "type": "array"
+    },
+    "bypass_risks": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "protected_files_checked": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "audit_evidence": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "safe_next_action": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "additionalProperties": true
+}

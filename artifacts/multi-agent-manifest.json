@@ -1,0 +1,88 @@
+{
+  "artifact_type": "multi_agent_manifest",
+  "version": "1.0",
+  "manifest_id": "multi_agent_manifest_mock_2026_07_24_001",
+  "run_id": "run_mock_2026_07_24_multi_agent_001",
+  "branch": "feature/agent-lab-v1",
+  "commit_sha": "cccccccc11111111dddddddd22222222eeeeeeee",
+  "agents_involved": [
+    {
+      "agent": "planner",
+      "role": "scope definition",
+      "artifact": "artifacts/planner-output.json"
+    },
+    {
+      "agent": "builder",
+      "role": "implementation summary",
+      "artifact": "artifacts/builder-diff-summary.json"
+    },
+    {
+      "agent": "reviewer",
+      "role": "quality review",
+      "artifact": "artifacts/reviewer-findings.json"
+    },
+    {
+      "agent": "security-auditor",
+      "role": "risk review",
+      "artifact": "artifacts/security-audit-report.json"
+    },
+    {
+      "agent": "consolidator",
+      "role": "operator report assembly",
+      "artifact": "artifacts/consolidated-operator-report.json"
+    }
+  ],
+  "upstream_artifacts": [
+    {
+      "path": "artifacts/planner-output.json",
+      "status": "present",
+      "provenance_hash": "sha256:aaaabbbbccccdddd1111222233334444555566667777888899990000aaaabbbb"
+    },
+    {
+      "path": "artifacts/reviewer-findings.json",
+      "status": "present",
+      "decision_state": "conditional"
+    },
+    {
+      "path": "artifacts/security-audit-report.json",
+      "status": "present",
+      "decision_state": "human_approval_required"
+    }
+  ],
+  "agent_role_boundaries": [
+    "Planner defines scope but does not approve execution.",
+    "Builder summarizes implementation but does not perform final approval.",
+    "Reviewer may recommend conditional approval but cannot override security findings.",
+    "Security Auditor records risk and required human approvals.",
+    "Consolidator reports evidence but must not downgrade upstream risk."
+  ],
+  "independent_evidence_required": true,
+  "dissent_items": [
+    {
+      "source_artifact": "artifacts/reviewer-findings.json",
+      "summary": "Reviewer approval is conditional on security review."
+    }
+  ],
+  "conditional_approvals": [
+    {
+      "source_artifact": "artifacts/reviewer-findings.json",
+      "condition": "approve_after_security_review"
+    },
+    {
+      "source_artifact": "artifacts/security-audit-report.json",
+      "condition": "human approval required for executor execution, broad MCP expansion, and workflow permission changes"
+    }
+  ],
+  "unresolved_findings": [
+    "Examples should not be mistaken for production-safe configuration.",
+    "No live MCP integration is implemented."
+  ],
+  "consolidation_rules": [
+    "If any upstream artifact has conditional approval, global status cannot be approved.",
+    "If unresolved findings exist, global status must be review_required or human_escalation_required.",
+    "If critical risk appears, global status must be blocked or human_escalation_required.",
+    "If dissent exists, final report must include it."
+  ],
+  "global_pipeline_status": "human_escalation_required",
+  "safe_next_action": "Preserve dissent and conditional approvals, then route final decision to human operator review."
+}

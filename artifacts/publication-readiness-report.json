@@ -1,0 +1,24 @@
+{
+  "artifact_type": "publication_readiness_report",
+  "version": "1.0",
+  "report_id": "publication_readiness_mock_2026_07_24_001",
+  "run_id": "run_mock_2026_07_24_publication_001",
+  "branch": "feature/agent-lab-v1",
+  "commit_sha": "dddddddd11111111eeeeeeee22222222ffffffff",
+  "artifact_under_review": "docs/generated-public-summary.md",
+  "source_payload_type": "structured_json",
+  "output_channel": "public_documentation",
+  "serialization_contract_checked": true,
+  "public_payload_field": "final_output",
+  "internal_fields_excluded": [
+    "simulated_internal_notes",
+    "simulated_private_context_references"
+  ],
+  "unresolved_comments_detected": false,
+  "reviewer_notes_detected": true,
+  "hidden_instruction_fragments_detected": false,
+  "private_context_references_detected": false,
+  "promotion_status": "blocked",
+  "required_human_review": true,
+  "safe_next_action": "Require human review and regenerate the public artifact from final_output before any publication attempt."
+}

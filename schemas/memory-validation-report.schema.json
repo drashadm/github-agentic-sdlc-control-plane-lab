@@ -1,0 +1,103 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "memory-validation-report.schema.json",
+  "title": "Memory Validation Report Artifact",
+  "description": "Educational schema for pre-flight validation of memory before context injection.",
+  "type": "object",
+  "required": [
+    "artifact_type",
+    "version",
+    "validation_run_id",
+    "branch",
+    "current_commit_sha",
+    "memory_files_reviewed",
+    "memory_facts_checked",
+    "facts_missing_source_commit",
+    "facts_with_stale_commit",
+    "facts_conflicting_with_agent_profile",
+    "facts_conflicting_with_repository_state",
+    "facts_allowed_into_context",
+    "facts_quarantined",
+    "validation_status",
+    "safe_next_action"
+  ],
+  "properties": {
+    "artifact_type": {
+      "const": "memory_validation_report"
+    },
+    "version": {
+      "type": "string"
+    },
+    "validation_run_id": {
+      "type": "string"
+    },
+    "branch": {
+      "type": "string"
+    },
+    "current_commit_sha": {
+      "type": "string",
+      "minLength": 7
+    },
+    "memory_files_reviewed": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "memory_facts_checked": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "facts_missing_source_commit": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "facts_with_stale_commit": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "facts_conflicting_with_agent_profile": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "facts_conflicting_with_repository_state": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "facts_allowed_into_context": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "facts_quarantined": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "validation_status": {
+      "enum": [
+        "valid",
+        "review_required",
+        "invalid",
+        "blocked"
+      ]
+    },
+    "safe_next_action": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "additionalProperties": true
+}

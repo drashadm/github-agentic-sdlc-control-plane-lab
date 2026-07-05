@@ -2,6 +2,24 @@
 
 This directory contains safe, inert artifact-reading labs for GitHub-native agentic SDLC governance. The sequence starts with individual artifacts, then moves into workflow handoffs, memory validation, schema checks, and multi-agent consolidation.
 
+## v0.5 Lab Suite Theme
+
+Labs 01-11 now form a progressive control-plane curriculum:
+
+- agent profiles
+- state handoffs
+- MCP tool boundaries
+- session continuity
+- hook enforcement
+- memory governance
+- multi-agent consolidation
+- output serialization
+- schema versus semantic validation
+- artifact transaction integrity
+- compound Zombie Pipeline failure
+
+Use `docs/vulnerability-to-defense-matrix.md` for the reviewer-friendly map from each lab to its failure mode and deterministic control pattern.
+
 ## Recommended Order
 
 Work through the labs in numeric order. Labs 01-03 build basic artifact literacy, Labs 04-07 connect artifacts across sessions and agents, Labs 08-10 add publication quality, schema validation, and GitHub Actions handoff drills, and Lab 11 covers advanced agentic handoff failure.
@@ -18,15 +36,15 @@ Advanced labs focus on agent-specific risks that may not appear in normal CI/CD 
 | --- | ----- | ---------- | ------------- |
 | Lab 01 | Read a Custom Agent File | Beginner | Agent profile and least-privilege review |
 | Lab 02 | Debug Workflow Output Handoff | Intermediate | State serializability and deterministic handoff validation |
-| Lab 03 | Identify MCP Tool Access Risk | Intermediate | MCP allowlist and trust-boundary review |
-| Lab 04 | Analyze a Session Log | Beginner | Session continuity and log inspection |
-| Lab 05 | Hook Permission Decision | Beginner | Fail-closed hook decision review |
-| Lab 06 | Memory Drift | Intermediate | Memory validation against repository state |
-| Lab 07 | Multi-Agent Handoff | Advanced | Cross-artifact consolidation review |
-| Lab 08 | Reviewer Note Leakage | Beginner / Intermediate | Final artifact cleanup and publish readiness |
-| Lab 09 | Schema Validation Failure | Intermediate | Schema-aware artifact governance |
-| Lab 10 | GitHub Actions Artifact Handoff Drill | Intermediate | Workflow dependency and evidence gating |
-| Lab 11 | Advanced Agent Handoff Failure | Advanced | Schema drift, context-window governance, and silent failure prevention |
+| Lab 03 | Identify MCP Tool Access Risk | Intermediate | MCP as externalized agent authority and tool-boundary governance |
+| Lab 04 | Analyze a Session Log | Intermediate | Resumed session continuity, temporal drift, stale state, and false continuity risk |
+| Lab 05 | Hook Permission Decision | Intermediate | Hook enforcement, semantic intent mediation, approval-to-payload binding, and fail-closed guardrails |
+| Lab 06 | Memory Drift | Intermediate | Memory as non-authoritative state, stale fact validation, belief/authorization separation, and memory quarantine |
+| Lab 07 | Multi-Agent Handoff | Advanced | Multi-agent coordination, semantic compression loss, dissent preservation, and consolidation fidelity |
+| Lab 08 | Reviewer Note Leakage | Intermediate | Reviewer note leakage, scratchpad separation, strict output serialization, and publication readiness gates |
+| Lab 09 | Schema Validation Failure | Intermediate | Schema-compliant confabulation, semantic nulls, content integrity, and cross-artifact consistency checks |
+| Lab 10 | GitHub Actions Artifact Handoff Drill | Intermediate | Workflow success versus agentic success, artifact transaction readiness, provenance-bound handoffs, and fail-closed downstream gates |
+| Lab 11 | Advanced Agent Handoff Failure | Advanced | Zombie Pipeline detection, compound chain-of-trust failure, token budget accountability, semantic progress checks, and fail-closed capstone review |
 
 ## How to Use the Answer Keys
 
@@ -57,3 +75,23 @@ Use this pattern when moving from surface artifact inspection to production-grad
 Lab 01 now models this deeper review pattern for the remaining labs by treating agent profiles as prompt-and-capability control surfaces, not passive documentation.
 
 Lab 02 extends the pattern by treating workflow outputs and artifact names as serialized state contracts. It shows why downstream agents must receive deterministic, schema-valid state for the current run instead of guessing or using stale cache context.
+
+Lab 03 extends the pattern by treating MCP configuration as an externalized agent authority boundary. It shows why wildcard tools, remote/local trust boundaries, server identity drift, and MCP output validation need explicit governance evidence.
+
+Lab 04 extends the pattern by treating resumed sessions as continuity claims that require deterministic proof. It shows why branch, commit, run ID, memory, permissions, prior errors, and approval state must be revalidated before privileged work continues.
+
+Lab 05 extends the pattern by treating hooks as runtime enforcement points between model intent and tool execution. It shows why semantic intent checks, payload-bound approvals, protected hook files, and fail-closed decisions are stronger than advisory logs.
+
+Lab 06 extends the pattern by treating memory as an untrusted cache rather than runtime authority. It shows why stale, unpinned, or authority-conflicting memory must be quarantined before it enters an agent context window.
+
+Lab 07 extends the pattern by treating final reports as high-fidelity governance artifacts. It shows why dissent, conditional approvals, provenance, and deterministic global-status rules must survive consolidation.
+
+Lab 08 extends the pattern by treating final documentation as promoted output, not merely generated text. It shows why reviewer notes, simulated scratchpad state, private context placeholders, and hidden instruction placeholders must be excluded through strict output serialization and publication readiness gates.
+
+Lab 09 extends the pattern by treating schema validation as the first gate rather than the final decision. It shows why schema-valid artifacts can still contain generic filler, semantic nulls, stale decisions, omitted caveats, or cross-artifact conflicts that should block downstream automation.
+
+Lab 10 extends the pattern by treating green workflow status as runner evidence, not proof of a valid agent handoff. It shows why artifact transaction readiness, provenance-bound consumption, record counts, and fail-closed downstream gates must prove the next agent received current and complete state.
+
+Lab 11 completes the v0.5 pattern as a capstone chain-of-trust review. It shows how schema drift, semantic voids, stale memory, malformed artifacts, retry budget exhaustion, context bloat, tool and hook boundaries, and final-report overconfidence can combine into one Zombie Pipeline failure.
+
+The v0.5 upgrade effort uses `docs/lab-nuance-upgrade-playbook.md` and `docs/v0.5-lab-upgrade-plan.md` as the quality bar for Labs 03-11.

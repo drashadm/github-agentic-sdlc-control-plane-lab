@@ -98,10 +98,14 @@ Focus:
 
 ## v0.5 - Lab Nuance Deepening
 
-Status: In progress
+Status: Lab upgrades complete in branch; capstone polish complete in branch.
 
 Focus:
 
+* complete lab suite alignment
+* vulnerability-to-defense matrix
+* v0.5 capstone review
+* final review before merge
 * upgrade Labs 03-11
 * apply Lab 01 and Lab 02 quality bar across remaining labs
 * deepen agentic failure-mode reasoning

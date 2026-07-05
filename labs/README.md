@@ -2,6 +2,24 @@
 
 This directory contains safe, inert artifact-reading labs for GitHub-native agentic SDLC governance. The sequence starts with individual artifacts, then moves into workflow handoffs, memory validation, schema checks, and multi-agent consolidation.
 
+## v0.5 Lab Suite Theme
+
+Labs 01-11 now form a progressive control-plane curriculum:
+
+- agent profiles
+- state handoffs
+- MCP tool boundaries
+- session continuity
+- hook enforcement
+- memory governance
+- multi-agent consolidation
+- output serialization
+- schema versus semantic validation
+- artifact transaction integrity
+- compound Zombie Pipeline failure
+
+Use `docs/vulnerability-to-defense-matrix.md` for the reviewer-friendly map from each lab to its failure mode and deterministic control pattern.
+
 ## Recommended Order
 
 Work through the labs in numeric order. Labs 01-03 build basic artifact literacy, Labs 04-07 connect artifacts across sessions and agents, Labs 08-10 add publication quality, schema validation, and GitHub Actions handoff drills, and Lab 11 covers advanced agentic handoff failure.

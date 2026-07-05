@@ -6,6 +6,8 @@ Schemas make those artifacts inspectable contracts. They define the minimum shap
 
 Schema validation does not prove an agent was correct. It proves the artifact is complete enough to review and that downstream jobs can rely on its shape before applying human judgment to its contents.
 
+For reviewer navigation, `docs/vulnerability-to-defense-matrix.md` maps each lab to its failure mode and deterministic control pattern, while `docs/v0.5-capstone-review.md` summarizes how the v0.5 suite should be evaluated.
+
 | Artifact | Schema | Purpose |
 | -------- | ------ | ------- |
 | `artifacts/planner-output.json` | `schemas/planner-output.schema.json` | Captures request scope, affected files, success criteria, risks, and whether execution needs approval. |

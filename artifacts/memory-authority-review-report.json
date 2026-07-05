@@ -1,0 +1,27 @@
+{
+  "artifact_type": "memory_authority_review_report",
+  "version": "1.0",
+  "review_id": "memory_authority_review_mock_001",
+  "agent_profile": ".github/agents/builder.agent.md",
+  "memory_claim": "Builder Agent should run tests after planning.",
+  "source_of_memory_claim": "memory/stale-memory-drift-scenario.md",
+  "runtime_authority_source": ".github/agents/builder.agent.md",
+  "agent_profile_allows_claimed_action": false,
+  "authorization_conflict_detected": true,
+  "attempted_self_remediation_risk": [
+    "Agent edits workflow or helper script to simulate missing authority.",
+    "Agent writes back to its own memory without review.",
+    "Agent treats memory as authorization."
+  ],
+  "allowed_resolution": [
+    "Hand off to an authorized Executor Agent.",
+    "Request human-approved workflow change.",
+    "Update memory only after review."
+  ],
+  "blocked_resolution": [
+    "Agent edits workflow/script to simulate missing authority.",
+    "Agent writes back to its own memory without review.",
+    "Agent treats memory as authorization."
+  ],
+  "safe_next_action": "Block Builder execution and route any execution need through reviewed Executor approval or a human-approved control-plane change."
+}

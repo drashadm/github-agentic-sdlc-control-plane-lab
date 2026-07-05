@@ -114,6 +114,10 @@ Focus:
 * approval-to-payload binding
 * advisory vs deterministic guardrails
 * fail-closed tool mediation
+* memory governance
+* stale memory validation
+* belief vs authorization separation
+* memory quarantine before context injection
 * keep one cumulative feature branch
 * preserve public-safe educational examples
 

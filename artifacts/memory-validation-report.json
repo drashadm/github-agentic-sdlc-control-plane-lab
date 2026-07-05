@@ -1,0 +1,50 @@
+{
+  "artifact_type": "memory_validation_report",
+  "version": "1.0",
+  "validation_run_id": "memory_validation_mock_2026_07_24_001",
+  "branch": "feature/agent-lab-v1",
+  "current_commit_sha": "bbbbbbbb11111111cccccccc22222222dddddddd",
+  "memory_files_reviewed": [
+    "memory/repository-facts-example.json",
+    "memory/stale-memory-drift-scenario.md",
+    "memory/memory-vector-index.lock.json"
+  ],
+  "memory_facts_checked": [
+    "repo_fact_001",
+    "repo_fact_002",
+    "repo_fact_003",
+    "repo_fact_004"
+  ],
+  "facts_missing_source_commit": [
+    "repo_fact_003",
+    "repo_fact_004"
+  ],
+  "facts_with_stale_commit": [
+    "repo_fact_002"
+  ],
+  "facts_conflicting_with_agent_profile": [
+    {
+      "fact_id": "repo_fact_003",
+      "memory_claim": "Builder agent may execute test commands after planning.",
+      "current_profile": ".github/agents/builder.agent.md",
+      "current_profile_tools": [
+        "read",
+        "search",
+        "edit"
+      ]
+    }
+  ],
+  "facts_conflicting_with_repository_state": [
+    "repo_fact_003"
+  ],
+  "facts_allowed_into_context": [
+    "repo_fact_001"
+  ],
+  "facts_quarantined": [
+    "repo_fact_002",
+    "repo_fact_003",
+    "repo_fact_004"
+  ],
+  "validation_status": "review_required",
+  "safe_next_action": "Prevent stale or unpinned memory from entering context before privileged execution."
+}

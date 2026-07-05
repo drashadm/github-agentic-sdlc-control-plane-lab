@@ -1,0 +1,25 @@
+{
+  "artifact_type": "memory_vector_index_lock",
+  "version": "1.0",
+  "index_id": "mock_memory_index_2026_07_24_001",
+  "index_type": "mock_vector_index_manifest",
+  "generated_at": "2026-07-24T13:30:00Z",
+  "generated_from_branch": "feature/agent-lab-v1",
+  "generated_from_commit_sha": "aaaaaaaa11111111bbbbbbbb22222222cccccccc",
+  "current_branch": "feature/agent-lab-v1",
+  "current_commit_sha": "bbbbbbbb11111111cccccccc22222222dddddddd",
+  "embedding_model_label": "mock-embedding-model-for-lab",
+  "indexed_memory_files": [
+    "memory/repository-facts-example.json",
+    "memory/stale-memory-drift-scenario.md"
+  ],
+  "source_paths_indexed": [
+    ".github/agents/builder.agent.md",
+    ".github/agents/executor.agent.md",
+    ".github/workflows/consolidated-operator-report.yml"
+  ],
+  "out_of_band_change_detected": true,
+  "index_matches_current_head": false,
+  "invalidation_required": true,
+  "safe_next_action": "Exclude stale memory from agent context and schedule re-indexing before privileged execution."
+}

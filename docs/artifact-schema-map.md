@@ -23,5 +23,8 @@ Schema validation does not prove an agent was correct. It proves the artifact is
 | `artifacts/intent-analysis-payload.json` | `schemas/intent-analysis-payload.schema.json` | Preserves pre-tool semantic intent analysis evidence before hook-mediated execution. |
 | `artifacts/hook-enforcement-report.json` | `schemas/hook-enforcement-report.schema.json` | Preserves evidence that hook decisions enforced, rewrote, advised, or blocked tool calls. |
 | `artifacts/hook-approval-binding-report.json` | `schemas/hook-approval-binding-report.schema.json` | Preserves evidence that human approval was bound to an exact operation, payload hash, run, branch, and commit. |
+| `memory/memory-vector-index.lock.json` | N/A | Preserves mocked memory index freshness evidence and whether long-term memory matches current repository head. |
+| `artifacts/memory-validation-report.json` | `schemas/memory-validation-report.schema.json` | Preserves evidence that memory facts were source-checked, freshness-checked, allowed, or quarantined before context injection. |
+| `artifacts/memory-authority-review-report.json` | `schemas/memory-authority-review-report.schema.json` | Preserves evidence separating agent belief from runtime authorization. |
 | `artifacts/planner-state-manifest.json` | `schemas/planner-state-manifest.schema.json` | Teaches state serializability and deterministic planner-to-builder handoffs. |
 | `artifacts/stale-agent-state-cache-example.json` | `schemas/stale-agent-state-cache-example.schema.json` | Demonstrates stale context risk when downstream agents fall back to previous-run state. |

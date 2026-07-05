@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "memory-authority-review-report.schema.json",
+  "title": "Memory Authority Review Report Artifact",
+  "description": "Educational schema for separating memory belief from runtime authorization.",
+  "type": "object",
+  "required": [
+    "artifact_type",
+    "version",
+    "review_id",
+    "agent_profile",
+    "memory_claim",
+    "source_of_memory_claim",
+    "runtime_authority_source",
+    "agent_profile_allows_claimed_action",
+    "authorization_conflict_detected",
+    "attempted_self_remediation_risk",
+    "allowed_resolution",
+    "blocked_resolution",
+    "safe_next_action"
+  ],
+  "properties": {
+    "artifact_type": {
+      "const": "memory_authority_review_report"
+    },
+    "version": {
+      "type": "string"
+    },
+    "review_id": {
+      "type": "string"
+    },
+    "agent_profile": {
+      "type": "string"
+    },
+    "memory_claim": {
+      "type": "string"
+    },
+    "source_of_memory_claim": {
+      "type": "string"
+    },
+    "runtime_authority_source": {
+      "type": "string"
+    },
+    "agent_profile_allows_claimed_action": {
+      "type": "boolean"
+    },
+    "authorization_conflict_detected": {
+      "type": "boolean"
+    },
+    "attempted_self_remediation_risk": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "allowed_resolution": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "blocked_resolution": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "safe_next_action": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "additionalProperties": true
+}

@@ -21,7 +21,7 @@ Advanced labs focus on agent-specific risks that may not appear in normal CI/CD 
 | Lab 03 | Identify MCP Tool Access Risk | Intermediate | MCP as externalized agent authority and tool-boundary governance |
 | Lab 04 | Analyze a Session Log | Intermediate | Resumed session continuity, temporal drift, stale state, and false continuity risk |
 | Lab 05 | Hook Permission Decision | Intermediate | Hook enforcement, semantic intent mediation, approval-to-payload binding, and fail-closed guardrails |
-| Lab 06 | Memory Drift | Intermediate | Memory validation against repository state |
+| Lab 06 | Memory Drift | Intermediate | Memory as non-authoritative state, stale fact validation, belief/authorization separation, and memory quarantine |
 | Lab 07 | Multi-Agent Handoff | Advanced | Cross-artifact consolidation review |
 | Lab 08 | Reviewer Note Leakage | Beginner / Intermediate | Final artifact cleanup and publish readiness |
 | Lab 09 | Schema Validation Failure | Intermediate | Schema-aware artifact governance |
@@ -63,5 +63,7 @@ Lab 03 extends the pattern by treating MCP configuration as an externalized agen
 Lab 04 extends the pattern by treating resumed sessions as continuity claims that require deterministic proof. It shows why branch, commit, run ID, memory, permissions, prior errors, and approval state must be revalidated before privileged work continues.
 
 Lab 05 extends the pattern by treating hooks as runtime enforcement points between model intent and tool execution. It shows why semantic intent checks, payload-bound approvals, protected hook files, and fail-closed decisions are stronger than advisory logs.
+
+Lab 06 extends the pattern by treating memory as an untrusted cache rather than runtime authority. It shows why stale, unpinned, or authority-conflicting memory must be quarantined before it enters an agent context window.
 
 The v0.5 upgrade effort uses `docs/lab-nuance-upgrade-playbook.md` and `docs/v0.5-lab-upgrade-plan.md` as the quality bar for Labs 03-11.

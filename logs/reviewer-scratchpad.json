@@ -1,0 +1,26 @@
+{
+  "artifact_type": "reviewer_scratchpad",
+  "version": "1.0",
+  "session_id": "session_mock_2026_07_24_reviewer_001",
+  "run_id": "run_mock_2026_07_24_publication_001",
+  "branch": "feature/agent-lab-v1",
+  "commit_sha": "dddddddd11111111eeeeeeee22222222ffffffff",
+  "reviewer_agent": "Reviewer Agent",
+  "scratchpad_visibility": "internal_only",
+  "simulated_internal_notes": [
+    "[simulated internal reviewer note]",
+    "[hidden scratchpad placeholder]"
+  ],
+  "simulated_private_context_references": [
+    "[private context reference omitted]"
+  ],
+  "final_output": "The public documentation is ready only after reviewer notes, unresolved comments, private context placeholders, and hidden instruction placeholders are excluded by the publication gate.",
+  "allowed_public_fields": [
+    "final_output"
+  ],
+  "blocked_public_fields": [
+    "simulated_internal_notes",
+    "simulated_private_context_references"
+  ],
+  "safe_next_action": "Generate public documentation only from final_output and preserve this scratchpad as internal review evidence."
+}

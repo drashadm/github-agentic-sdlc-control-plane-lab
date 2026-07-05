@@ -30,3 +30,6 @@ Schema validation does not prove an agent was correct. It proves the artifact is
 | `artifacts/consolidation-fidelity-report.json` | `schemas/consolidation-fidelity-report.schema.json` | Preserves evidence that final consolidation retained upstream findings, dissent, conditional risk, and semantic fidelity. |
 | `artifacts/planner-state-manifest.json` | `schemas/planner-state-manifest.schema.json` | Teaches state serializability and deterministic planner-to-builder handoffs. |
 | `artifacts/stale-agent-state-cache-example.json` | `schemas/stale-agent-state-cache-example.schema.json` | Demonstrates stale context risk when downstream agents fall back to previous-run state. |
+| `logs/reviewer-scratchpad.json` | `schemas/reviewer-scratchpad.schema.json` | Demonstrates separation between simulated internal reviewer scratchpad state and approved public output fields. |
+| `artifacts/reviewer-note-leakage-report.json` | `schemas/reviewer-note-leakage-report.schema.json` | Preserves evidence that reviewer notes, draft residue, hidden instruction placeholders, and private context references were checked before publication. |
+| `artifacts/publication-readiness-report.json` | `schemas/publication-readiness-report.schema.json` | Records whether a public artifact passed output serialization, internal-field exclusion, leakage, and promotion-readiness checks. |

@@ -84,12 +84,13 @@ org-governance/    Organization-level custom agent governance examples
 9. Read `docs/hook-enforcement-governance.md` to understand pre-tool guardrails and approval binding.
 10. Read `docs/memory-governance.md` to understand memory validation, quarantine, and belief/authorization separation.
 11. Read `docs/multi-agent-coordination-governance.md` to understand dissent preservation and consolidation fidelity.
-12. Read `docs/mcp-tool-boundary-governance.md` before reviewing MCP server examples.
-13. Use `docs/lab-nuance-upgrade-playbook.md` and `docs/v0.5-lab-upgrade-plan.md` to understand the remaining lab upgrade quality bar.
-14. Inspect the agent profiles under `.github/agents/` and note how tool access is scoped.
-15. Review MCP server examples under `mcp/`.
-16. Review workflow governance patterns under `.github/workflows/`.
-17. Complete the labs under `labs/` by reading the artifacts and explaining what is safe, risky, broken, or missing.
+12. Read `docs/output-serialization-governance.md` to understand draft/final separation and public artifact promotion gates.
+13. Read `docs/mcp-tool-boundary-governance.md` before reviewing MCP server examples.
+14. Use `docs/lab-nuance-upgrade-playbook.md` and `docs/v0.5-lab-upgrade-plan.md` to understand the remaining lab upgrade quality bar.
+15. Inspect the agent profiles under `.github/agents/` and note how tool access is scoped.
+16. Review MCP server examples under `mcp/`.
+17. Review workflow governance patterns under `.github/workflows/`.
+18. Complete the labs under `labs/` by reading the artifacts and explaining what is safe, risky, broken, or missing.
 
 Use `labs/README.md` for the recommended lab order, difficulty levels, and answer-key guidance.
 

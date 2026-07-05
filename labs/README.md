@@ -23,7 +23,7 @@ Advanced labs focus on agent-specific risks that may not appear in normal CI/CD 
 | Lab 05 | Hook Permission Decision | Intermediate | Hook enforcement, semantic intent mediation, approval-to-payload binding, and fail-closed guardrails |
 | Lab 06 | Memory Drift | Intermediate | Memory as non-authoritative state, stale fact validation, belief/authorization separation, and memory quarantine |
 | Lab 07 | Multi-Agent Handoff | Advanced | Multi-agent coordination, semantic compression loss, dissent preservation, and consolidation fidelity |
-| Lab 08 | Reviewer Note Leakage | Beginner / Intermediate | Final artifact cleanup and publish readiness |
+| Lab 08 | Reviewer Note Leakage | Intermediate | Reviewer note leakage, scratchpad separation, strict output serialization, and publication readiness gates |
 | Lab 09 | Schema Validation Failure | Intermediate | Schema-aware artifact governance |
 | Lab 10 | GitHub Actions Artifact Handoff Drill | Intermediate | Workflow dependency and evidence gating |
 | Lab 11 | Advanced Agent Handoff Failure | Advanced | Schema drift, context-window governance, and silent failure prevention |
@@ -67,5 +67,7 @@ Lab 05 extends the pattern by treating hooks as runtime enforcement points betwe
 Lab 06 extends the pattern by treating memory as an untrusted cache rather than runtime authority. It shows why stale, unpinned, or authority-conflicting memory must be quarantined before it enters an agent context window.
 
 Lab 07 extends the pattern by treating final reports as high-fidelity governance artifacts. It shows why dissent, conditional approvals, provenance, and deterministic global-status rules must survive consolidation.
+
+Lab 08 extends the pattern by treating final documentation as promoted output, not merely generated text. It shows why reviewer notes, simulated scratchpad state, private context placeholders, and hidden instruction placeholders must be excluded through strict output serialization and publication readiness gates.
 
 The v0.5 upgrade effort uses `docs/lab-nuance-upgrade-playbook.md` and `docs/v0.5-lab-upgrade-plan.md` as the quality bar for Labs 03-11.

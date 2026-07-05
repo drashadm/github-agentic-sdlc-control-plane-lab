@@ -1,0 +1,87 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reviewer-scratchpad.schema.json",
+  "title": "Reviewer Scratchpad Artifact",
+  "description": "Educational schema for separating simulated internal reviewer scratchpad state from public output.",
+  "type": "object",
+  "required": [
+    "artifact_type",
+    "version",
+    "session_id",
+    "run_id",
+    "branch",
+    "commit_sha",
+    "reviewer_agent",
+    "scratchpad_visibility",
+    "simulated_internal_notes",
+    "simulated_private_context_references",
+    "final_output",
+    "allowed_public_fields",
+    "blocked_public_fields",
+    "safe_next_action"
+  ],
+  "properties": {
+    "artifact_type": {
+      "const": "reviewer_scratchpad"
+    },
+    "version": {
+      "type": "string"
+    },
+    "session_id": {
+      "type": "string"
+    },
+    "run_id": {
+      "type": "string"
+    },
+    "branch": {
+      "type": "string"
+    },
+    "commit_sha": {
+      "type": "string",
+      "minLength": 7
+    },
+    "reviewer_agent": {
+      "type": "string"
+    },
+    "scratchpad_visibility": {
+      "enum": [
+        "internal_only",
+        "public",
+        "unknown"
+      ]
+    },
+    "simulated_internal_notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "simulated_private_context_references": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "final_output": {
+      "type": "string",
+      "minLength": 1
+    },
+    "allowed_public_fields": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "blocked_public_fields": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "safe_next_action": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "additionalProperties": true
+}

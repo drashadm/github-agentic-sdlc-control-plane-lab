@@ -123,6 +123,10 @@ Focus:
 * dissent preservation
 * consolidation fidelity
 * deterministic global-status merge rules
+* output serialization governance
+* reviewer note leakage
+* draft/final boundary protection
+* public artifact promotion gates
 * keep one cumulative feature branch
 * preserve public-safe educational examples
 

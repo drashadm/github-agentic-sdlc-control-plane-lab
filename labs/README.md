@@ -19,7 +19,7 @@ Advanced labs focus on agent-specific risks that may not appear in normal CI/CD 
 | Lab 01 | Read a Custom Agent File | Beginner | Agent profile and least-privilege review |
 | Lab 02 | Debug Workflow Output Handoff | Intermediate | State serializability and deterministic handoff validation |
 | Lab 03 | Identify MCP Tool Access Risk | Intermediate | MCP as externalized agent authority and tool-boundary governance |
-| Lab 04 | Analyze a Session Log | Beginner | Session continuity and log inspection |
+| Lab 04 | Analyze a Session Log | Intermediate | Resumed session continuity, temporal drift, stale state, and false continuity risk |
 | Lab 05 | Hook Permission Decision | Beginner | Fail-closed hook decision review |
 | Lab 06 | Memory Drift | Intermediate | Memory validation against repository state |
 | Lab 07 | Multi-Agent Handoff | Advanced | Cross-artifact consolidation review |
@@ -59,5 +59,7 @@ Lab 01 now models this deeper review pattern for the remaining labs by treating 
 Lab 02 extends the pattern by treating workflow outputs and artifact names as serialized state contracts. It shows why downstream agents must receive deterministic, schema-valid state for the current run instead of guessing or using stale cache context.
 
 Lab 03 extends the pattern by treating MCP configuration as an externalized agent authority boundary. It shows why wildcard tools, remote/local trust boundaries, server identity drift, and MCP output validation need explicit governance evidence.
+
+Lab 04 extends the pattern by treating resumed sessions as continuity claims that require deterministic proof. It shows why branch, commit, run ID, memory, permissions, prior errors, and approval state must be revalidated before privileged work continues.
 
 The v0.5 upgrade effort uses `docs/lab-nuance-upgrade-playbook.md` and `docs/v0.5-lab-upgrade-plan.md` as the quality bar for Labs 03-11.

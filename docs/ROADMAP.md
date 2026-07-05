@@ -105,6 +105,10 @@ Focus:
 * upgrade Labs 03-11
 * apply Lab 01 and Lab 02 quality bar across remaining labs
 * deepen agentic failure-mode reasoning
+* resumed session continuity
+* temporal drift
+* stale state validation
+* session logs as governance evidence
 * keep one cumulative feature branch
 * preserve public-safe educational examples
 

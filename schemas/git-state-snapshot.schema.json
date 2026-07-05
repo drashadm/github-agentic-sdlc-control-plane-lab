@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "git-state-snapshot.schema.json",
+  "title": "Git State Snapshot Artifact",
+  "description": "Educational schema for mocked resumed-session branch and commit continuity evidence.",
+  "type": "object",
+  "required": [
+    "artifact_type",
+    "version",
+    "snapshot_source",
+    "current_branch",
+    "current_commit_sha",
+    "expected_branch_from_session",
+    "expected_commit_sha_from_session",
+    "branch_matches_session",
+    "commit_matches_session",
+    "out_of_band_change_detected",
+    "state_drift_findings",
+    "safe_next_action"
+  ],
+  "properties": {
+    "artifact_type": {
+      "const": "git_state_snapshot"
+    },
+    "version": {
+      "type": "string"
+    },
+    "snapshot_source": {
+      "type": "string"
+    },
+    "current_branch": {
+      "type": "string"
+    },
+    "current_commit_sha": {
+      "type": "string",
+      "minLength": 7
+    },
+    "expected_branch_from_session": {
+      "type": "string"
+    },
+    "expected_commit_sha_from_session": {
+      "type": "string",
+      "minLength": 7
+    },
+    "branch_matches_session": {
+      "type": "boolean"
+    },
+    "commit_matches_session": {
+      "type": "boolean"
+    },
+    "out_of_band_change_detected": {
+      "type": "boolean"
+    },
+    "state_drift_findings": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "safe_next_action": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,121 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "session-continuity-report.schema.json",
+  "title": "Session Continuity Report Artifact",
+  "description": "Educational schema for reviewing resumed-session continuity before privileged agent execution.",
+  "type": "object",
+  "required": [
+    "artifact_type",
+    "version",
+    "session_id",
+    "session_state",
+    "previous_run_id",
+    "current_run_id",
+    "previous_commit_sha",
+    "current_commit_sha",
+    "previous_branch",
+    "current_branch",
+    "resumed_from_artifact",
+    "memory_facts_checked",
+    "memory_validation_status",
+    "stale_context_findings",
+    "previous_error_footprints",
+    "tool_permissions_changed",
+    "approval_state_checked",
+    "continuity_status",
+    "blocking_findings",
+    "safe_next_action"
+  ],
+  "properties": {
+    "artifact_type": {
+      "const": "session_continuity_report"
+    },
+    "version": {
+      "type": "string"
+    },
+    "session_id": {
+      "type": "string"
+    },
+    "session_state": {
+      "enum": [
+        "new",
+        "resumed",
+        "unknown"
+      ]
+    },
+    "previous_run_id": {
+      "type": "string"
+    },
+    "current_run_id": {
+      "type": "string"
+    },
+    "previous_commit_sha": {
+      "type": "string",
+      "minLength": 7
+    },
+    "current_commit_sha": {
+      "type": "string",
+      "minLength": 7
+    },
+    "previous_branch": {
+      "type": "string"
+    },
+    "current_branch": {
+      "type": "string"
+    },
+    "resumed_from_artifact": {
+      "type": "string"
+    },
+    "memory_facts_checked": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "memory_validation_status": {
+      "enum": [
+        "valid",
+        "review_required",
+        "invalid",
+        "blocked"
+      ]
+    },
+    "stale_context_findings": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "previous_error_footprints": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "tool_permissions_changed": {
+      "type": "boolean"
+    },
+    "approval_state_checked": {
+      "type": "boolean"
+    },
+    "continuity_status": {
+      "enum": [
+        "valid",
+        "review_required",
+        "invalid",
+        "blocked"
+      ]
+    },
+    "blocking_findings": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "safe_next_action": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "additionalProperties": true
+}

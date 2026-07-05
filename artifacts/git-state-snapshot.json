@@ -1,0 +1,20 @@
+{
+  "artifact_type": "git_state_snapshot",
+  "version": "1.0",
+  "snapshot_source": "mocked educational continuity review, not real .git internals",
+  "current_branch": "feature/agent-lab-v1",
+  "current_commit_sha": "aaaaaaaa11111111bbbbbbbb22222222cccccccc",
+  "expected_branch_from_session": "feature/agent-lab-v1",
+  "expected_commit_sha_from_session": "dddddddd33333333eeeeeeee44444444ffffffff",
+  "branch_matches_session": true,
+  "commit_matches_session": false,
+  "out_of_band_change_detected": true,
+  "state_drift_findings": [
+    {
+      "finding": "Current commit SHA differs from the commit recorded when the session was created.",
+      "risk": "The resumed agent may act on a plan or artifact generated before a human hotfix or parallel PR merge.",
+      "required_review": "Compare current repository state with the resumed session plan before allowing privileged execution."
+    }
+  ],
+  "safe_next_action": "Block privileged execution until branch, commit, artifacts, and approval state are revalidated."
+}

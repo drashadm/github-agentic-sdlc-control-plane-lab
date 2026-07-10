@@ -1,0 +1,23 @@
+name: Validate Repository
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: Lightweight repository validation
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Show Python version
+        run: python --version
+
+      # Educational validation workflow: no secrets, no deploys, no external dependencies.
+      - name: Run dependency-free validation harness
+        run: python scripts/validate_repo.py

@@ -147,6 +147,19 @@ Focus:
 * keep one cumulative feature branch
 * preserve public-safe educational examples
 
+## v0.6 - Validation Harness
+
+Status: In progress
+
+Focus:
+
+* dependency-free validation script
+* JSON parse checks
+* lightweight schema contract checks
+* no-secrets scan
+* local markdown reference checks
+* pull request validation workflow
+
 ## v1.0 - Public Showcase Version
 
 Status: Planned

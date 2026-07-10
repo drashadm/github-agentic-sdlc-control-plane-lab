@@ -120,6 +120,18 @@ Use `labs/README.md` for the recommended lab order, difficulty levels, and answe
 
 ---
 
+## Local Validation
+
+Run the dependency-free repository validation harness with:
+
+```bash
+python scripts/validate_repo.py
+```
+
+The harness checks JSON parsing, lightweight schema contract fields, conservative no-secrets posture, and local documentation references. It uses only the Python standard library and does not claim full JSON Schema validation.
+
+---
+
 ## Design Principles
 
 **Planning and execution are different responsibilities.**

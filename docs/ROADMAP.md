@@ -160,6 +160,18 @@ Focus:
 * local markdown reference checks
 * pull request validation workflow
 
+## v0.7 - Certification Cram Map
+
+Status: In progress
+
+Focus:
+
+* repo-based cram sprint
+* skill-to-artifact map
+* scenario practice questions
+* oral defense prompts
+* practical exam readiness path
+
 ## v1.0 - Public Showcase Version
 
 Status: Planned

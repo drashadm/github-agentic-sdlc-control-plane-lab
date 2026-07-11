@@ -132,6 +132,12 @@ The harness checks JSON parsing, lightweight schema contract fields, conservativ
 
 ---
 
+## Certification Cram Path
+
+For a repo-based study sprint, use `docs/certification-cram-map.md`, `docs/exam-style-practice-questions.md`, and `docs/oral-defense-prompts.md`. These files map the lab artifacts to practical agentic SDLC skills and interview-style explanations. They are study aids, not official exam guidance or a guarantee of exam coverage.
+
+---
+
 ## Design Principles
 
 **Planning and execution are different responsibilities.**

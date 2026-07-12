@@ -2,6 +2,8 @@
 
 This document is a repo-based study map, not an official exam guide. It maps practical repository artifacts to agentic SDLC skills the operator should be able to explain, inspect, and reason about.
 
+For the final release workflow, see `docs/reviewer-quickstart.md`, `docs/public-readiness-checklist.md`, and `docs/v1.0-release-plan.md`.
+
 ## How to Use This Cram Map
 
 Review the repository artifacts, not just the prose. Inspect workflows, schemas, logs, MCP examples, hooks, validation output, and lab answer keys.

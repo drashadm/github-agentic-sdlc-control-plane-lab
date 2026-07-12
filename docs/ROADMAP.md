@@ -172,6 +172,18 @@ Focus:
 * oral defense prompts
 * practical exam readiness path
 
+## v0.8 - Hands-On Exam Drills
+
+Status: In progress
+
+Focus:
+
+* artifact review drills
+* weak-area scorecard
+* rapid review flashcards
+* final 48-hour cram plan
+* active recall and scenario diagnosis
+
 ## v1.0 - Public Showcase Version
 
 Status: Planned

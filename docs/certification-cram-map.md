@@ -172,6 +172,10 @@ Questions to answer:
 Output to produce:
 - A mock defense transcript and a weak-area list for final review.
 
+## Hands-On Drill Layer
+
+After the seven-day sprint, use `docs/hands-on-artifact-review-drills.md` for timed diagnosis, `docs/weak-area-scorecard.md` to target weak skills, `docs/rapid-review-flashcards.md` for active recall, and `docs/final-48-hour-cram-plan.md` to structure the final review window.
+
 ## Skill-to-Artifact Map
 
 | Skill Area | What to Know | Repo Artifacts to Inspect | Labs |

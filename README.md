@@ -138,6 +138,12 @@ For a repo-based study sprint, use `docs/certification-cram-map.md`, `docs/exam-
 
 ---
 
+## Hands-On Cram Drills
+
+Practice timed artifact diagnosis with `docs/hands-on-artifact-review-drills.md`, track readiness in `docs/weak-area-scorecard.md`, review `docs/rapid-review-flashcards.md`, and organize the final sprint with `docs/final-48-hour-cram-plan.md`.
+
+---
+
 ## Design Principles
 
 **Planning and execution are different responsibilities.**

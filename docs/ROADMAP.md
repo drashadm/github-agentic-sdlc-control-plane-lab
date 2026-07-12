@@ -184,15 +184,26 @@ Focus:
 * final 48-hour cram plan
 * active recall and scenario diagnosis
 
-## v1.0 - Public Showcase Version
+## v0.9 - Public Readiness Polish
+
+Status: In progress
+
+Focus:
+
+* reviewer quickstart
+* public readiness checklist
+* changelog
+* v1.0 release plan
+* final navigation and claim hygiene
+
+## v1.0.0 - Stable Public Release
 
 Status: Planned
 
 Focus:
 
-* Polished README
-* Complete lab sequence
-* Validated artifacts
-* Stronger GitHub docs alignment
-* LinkedIn-ready project summary
-* Clear public proof narrative
+* merge v0.9
+* run validation on main
+* final human review
+* tag v1.0.0
+* begin certification cram sprint

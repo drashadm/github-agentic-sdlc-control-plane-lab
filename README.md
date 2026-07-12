@@ -10,9 +10,15 @@ This is not a certification cram sheet or a production integration. It is a prac
 
 ## Project Status
 
-This is a v0.1 educational scaffold for studying GitHub native agentic SDLC governance. The repository contains illustrative examples, sample artifacts, and practice labs. Some workflows, MCP configurations, hook examples, and logs are intentionally simplified or intentionally risky so they can be inspected, questioned, and improved.
+This is a v0.9 public-readiness candidate for studying GitHub native agentic SDLC governance. The repository contains illustrative examples, schemas, validation checks, governance artifacts, and practice labs. Some workflows, MCP configurations, hook examples, and logs are intentionally simplified or intentionally risky so they can be inspected, questioned, and improved.
 
-The goal of this version is to establish the control plane structure and artifact literacy foundation. Future polish passes will add schema validation, expanded answer keys, workflow dry run checks, stronger source alignment, and more realistic failure scenarios.
+The goal of this version is to prepare the artifact literacy and control-plane governance lab for final human review before a stable v1.0.0 public release. It remains educational and does not claim to be a production security product or live agent execution system.
+
+---
+
+## Quick Review Path
+
+Start with `docs/reviewer-quickstart.md`, then use `docs/vulnerability-to-defense-matrix.md` and `labs/README.md` to inspect representative controls. Run `python scripts/validate_repo.py` for the repository's dependency-free validation checks.
 
 ---
 
@@ -141,6 +147,12 @@ For a repo-based study sprint, use `docs/certification-cram-map.md`, `docs/exam-
 ## Hands-On Cram Drills
 
 Practice timed artifact diagnosis with `docs/hands-on-artifact-review-drills.md`, track readiness in `docs/weak-area-scorecard.md`, review `docs/rapid-review-flashcards.md`, and organize the final sprint with `docs/final-48-hour-cram-plan.md`.
+
+---
+
+## Release Readiness
+
+Use `docs/public-readiness-checklist.md`, `CHANGELOG.md`, and `docs/v1.0-release-plan.md` for final review, release history, and the human-approved tagging path.
 
 ---
 
